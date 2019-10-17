@@ -1,64 +1,112 @@
 package com.example.walkinclinicv01;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Patterns;
 import android.view.View;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.os.Bundle;
 import android.widget.EditText;
-import android.widget.RadioButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class RegistrationWindow extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
-    //constants created to store user's first name and their role
-    public static final String NAME = "com.example.walkinclinicv01.extra.MESSAGE";
-    private EditText nameEditText;
+public class RegistrationWindow extends AppCompatActivity implements View.OnClickListener {
 
+    private FirebaseAuth mAuth;
+    EditText editTextUserName, editTextPassword, editTextFirstName, editTextLastName, editTextConfirmation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        //store first name of user
-        nameEditText = (EditText)  findViewById(R.id.firstName);
+        editTextUserName = (EditText) findViewById(R.id.username);
+        editTextPassword = (EditText) findViewById(R.id.password);
+        editTextFirstName = (EditText) findViewById(R.id.firstName);
+        editTextLastName = (EditText) findViewById(R.id.lastName);
+        editTextConfirmation = (EditText) findViewById(R.id.confirmPassword);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        findViewById(R.id.button).setOnClickListener(this);
+        findViewById(R.id.logIn).setOnClickListener(this);
+
     }
 
-    //onClick method for clicking "Already a user? Sign in"
-    public void moveToLoginWindow(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+    private void registerUser(){
+        String username = editTextUserName.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+        String FirstName = editTextFirstName.getText().toString().trim();
+        String LastName = editTextLastName.getText().toString().trim();
+        String confirmation = editTextConfirmation.getText().toString().trim();
 
-    //onClick for Sign up (successful registration)
-    public void moveToWelcomeWindow(View view){
-        //check if valid, then create new intent
-        Intent intent = new Intent(this, WelcomeWindow.class);
-        startActivity(intent);
-        String userName = nameEditText.getText().toString();
-    }
-
-    //onClick for user role selection
-    public void onRadioButtonClicked(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-        String displayRole = "";
-
-        //check which radio button was selected
-        switch(view.getId()) {
-            case R.id.patientSelect:
-                if (checked)
-                    displayRole = "patient";
-                    break;
-            case R.id.employeeSelect:
-                if (checked)
-                    displayRole = "employee";
-                    break;
+        if (username.isEmpty()){
+            editTextUserName.setError("Email is required");
+            editTextUserName.requestFocus();
+            return;
         }
-        //pass a string value of the user role to the Welcome Window
-        /*Intent i = new Intent(this, WelcomeWindow.class);
-        i.putExtra("id", displayRole);
-        startActivity(i);*/
+
+        if (password.isEmpty()){
+            editTextPassword.setError("Password is required");
+            editTextPassword.requestFocus();
+            return;
+        }
+
+        if (FirstName.isEmpty()){
+            editTextFirstName.setError("first name is required");
+            editTextFirstName.requestFocus();
+            return;
+        }
+        if (LastName.isEmpty()){
+            editTextLastName.setError("last name is required");
+            editTextLastName.requestFocus();
+            return;
+        }
+        if (confirmation.isEmpty()){
+            editTextConfirmation.setError("Password confirmation is required");
+            editTextConfirmation.requestFocus();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()){
+            editTextUserName.setError("Please enter a valid email");
+            editTextUserName.requestFocus();
+            return;
+        }
+
+        if(password.length()<6){
+            editTextPassword.setError("Minimum length of password should be 6");
+            editTextPassword.requestFocus();
+            return;
+        }
+
+        mAuth.createUserWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(getApplicationContext(), "User Register Successful", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.button:
+                registerUser();
+                startActivity(new Intent(this, WelcomeWindow.class));
+                break;
+            case R.id.logIn:
+                startActivity(new Intent(this,MainActivity.class));
+                break;
+        }
     }
 }
