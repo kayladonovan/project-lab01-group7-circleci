@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class WelcomeWindow extends AppCompatActivity {
 
     @Override
@@ -12,6 +14,5 @@ public class WelcomeWindow extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_window);
     }
-
 
 }

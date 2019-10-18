@@ -75,15 +75,15 @@
             />
 
         <Button
-            android:layout_height="wrap_content"
-            android:layout_width="147dp"
-            android:text="Sign In"
-            android:gravity="center"
             android:id="@+id/signIn"
-            android:onClick="checkLogin"
-            android:layout_weight="0"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            style="@style/Widget.AppCompat.Button.Small"/>
+            android:layout_weight="0"
+            android:gravity="center"
+            android:onClick="checkLogin"
+            android:text="Sign In" />
 
         <Space
             android:layout_height="20dp"
