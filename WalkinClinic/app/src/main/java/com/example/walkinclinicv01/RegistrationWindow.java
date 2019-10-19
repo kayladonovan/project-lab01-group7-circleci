@@ -16,11 +16,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationWindow extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-    EditText editTextUserName, editTextPassword, editTextFirstName, editTextLastName, editTextConfirmation;
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference myRef;
+    EditText editTextUserName, editTextPassword, editTextFirstName, editTextLastName, editTextConfirmation,editTextUserRole;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,76 +36,85 @@ public class RegistrationWindow extends AppCompatActivity implements View.OnClic
         editTextFirstName = (EditText) findViewById(R.id.firstName);
         editTextLastName = (EditText) findViewById(R.id.lastName);
         editTextConfirmation = (EditText) findViewById(R.id.confirmPassword);
+        editTextUserRole = (EditText) findViewById(R.id.userRole);
 
-        mAuth = FirebaseAuth.getInstance();
+
 
         findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.logIn).setOnClickListener(this);
 
     }
 
-    private void registerUser(){
-        String username = editTextUserName.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+    private void registerUser() {
         String FirstName = editTextFirstName.getText().toString().trim();
         String LastName = editTextLastName.getText().toString().trim();
+        String username = editTextUserName.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+        //String FirstName = editTextFirstName.getText().toString().trim();
+        //String LastName = editTextLastName.getText().toString().trim();
         String confirmation = editTextConfirmation.getText().toString().trim();
+        String userRole = editTextUserRole.getText().toString().trim();
 
-        if (username.isEmpty()){
+        if (username.isEmpty()) {
             editTextUserName.setError("Email is required");
             editTextUserName.requestFocus();
             return;
         }
 
-        if (password.isEmpty()){
+        if (password.isEmpty()) {
             editTextPassword.setError("Password is required");
             editTextPassword.requestFocus();
             return;
         }
 
-        if (FirstName.isEmpty()){
+        if (FirstName.isEmpty()) {
             editTextFirstName.setError("first name is required");
             editTextFirstName.requestFocus();
             return;
         }
-        if (LastName.isEmpty()){
+        if (LastName.isEmpty()) {
             editTextLastName.setError("last name is required");
             editTextLastName.requestFocus();
             return;
         }
-        if (confirmation.isEmpty()){
+        if (confirmation.isEmpty()) {
             editTextConfirmation.setError("Password confirmation is required");
             editTextConfirmation.requestFocus();
             return;
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
             editTextUserName.setError("Please enter a valid email");
             editTextUserName.requestFocus();
             return;
         }
 
-        if(password.length()<6){
+        if (password.length() < 6) {
             editTextPassword.setError("Minimum length of password should be 6");
             editTextPassword.requestFocus();
             return;
         }
 
-        mAuth.createUserWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "User Register Successful", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        final Person person = new Person(userRole, FirstName, LastName, username);
+
+        //System.out.println("Hiee");
+        //myRef = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        mAuth.createUserWithEmailAndPassword(username, password);
+
+        myRef = FirebaseDatabase.getInstance().getReference();
+        FirebaseUser user = mAuth.getCurrentUser();
+        myRef.child("users").child(user.getUid()).setValue(person);
+        System.out.println("Info Saved");
 
     }
+
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button:
+                //String role = onRoleClicked(view);
                 registerUser();
                 startActivity(new Intent(this, WelcomeWindow.class));
                 break;
