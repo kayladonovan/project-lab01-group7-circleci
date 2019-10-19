@@ -1,0 +1,40 @@
+UMPLE code for UML diagram:
+
+class WalkInClinic
+{
+  }
+
+class User
+{
+  firstName;
+  lastName;
+  * -- 1 WalkInClinic;
+}
+
+class Administrator
+{
+  isA User;
+  1..* -- 1 LoginInfo;
+}
+
+class Patient
+{
+  isA User;
+  1..* -- 1 LoginInfo;
+}
+
+class WalkInClinic_Employee
+{
+  isA User;
+  1..* -- 1 LoginInfo;
+}
+
+class LoginInfo
+{
+  email;
+  Password;
+  Boolean enable;
+  Boolean Has_an_Account;
+}
+
+
