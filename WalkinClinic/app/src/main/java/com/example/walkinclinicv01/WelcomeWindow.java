@@ -18,14 +18,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 
 public class WelcomeWindow extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     DatabaseReference mDatabase;
 
-    String name;
-    String role;
+    TextView firstNameTextView;
+    TextView roleTextView;
 
     Button userSignOut;
 
@@ -34,6 +36,8 @@ public class WelcomeWindow extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_window);
 
+        firstNameTextView = (TextView) findViewById(R.id.textFirstName);
+        roleTextView = (TextView) findViewById(R.id.textRole);
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
@@ -43,8 +47,9 @@ public class WelcomeWindow extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Person person = dataSnapshot.getValue(Person.class);
-                name = person.getFirstName();
-                role = person.getRole();
+                System.out.println(person);
+                firstNameTextView.setText(person.getFirstName());
+                roleTextView.setText(person.getRole());
             }
 
             @Override
@@ -53,8 +58,6 @@ public class WelcomeWindow extends AppCompatActivity {
             }
         });
 
-        System.out.println("Name:"+name);
-        System.out.println("Role"+role);
         userSignOut = findViewById(R.id.SignOut);
 
         userSignOut.setOnClickListener(new View.OnClickListener(){
@@ -65,6 +68,7 @@ public class WelcomeWindow extends AppCompatActivity {
                                            }
                                        }
         );
+
     }
 
 }

@@ -21,8 +21,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Welcome, "
+            android:text="Welcome,"
             android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="26sp" />
 
         <Space
             android:layout_width="match_parent"
@@ -35,6 +43,14 @@
             android:gravity="center"
             android:text="You are logged in as a"
             android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Role"
+            android:textSize="26sp" />
 
         <Space
             android:layout_width="match_parent"

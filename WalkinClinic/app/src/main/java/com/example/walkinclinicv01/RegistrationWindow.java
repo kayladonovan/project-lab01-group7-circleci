@@ -97,15 +97,16 @@ public class RegistrationWindow extends AppCompatActivity implements View.OnClic
 
         final Person person = new Person(userRole, FirstName, LastName, username);
 
-        //System.out.println("Hiee");
-        //myRef = FirebaseDatabase.getInstance().getReference();
+
         mAuth = FirebaseAuth.getInstance();
         mAuth.createUserWithEmailAndPassword(username, password);
+        mAuth.signInWithEmailAndPassword(username,password);
 
         myRef = FirebaseDatabase.getInstance().getReference();
         FirebaseUser user = mAuth.getCurrentUser();
+        
         myRef.child("users").child(user.getUid()).setValue(person);
-        System.out.println("Info Saved");
+
 
     }
 
@@ -114,7 +115,7 @@ public class RegistrationWindow extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button:
-                //String role = onRoleClicked(view);
+
                 registerUser();
                 startActivity(new Intent(this, WelcomeWindow.class));
                 break;

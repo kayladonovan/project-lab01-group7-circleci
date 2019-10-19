@@ -26,7 +26,7 @@ public class Person {
     public String getUserName(){ return userName;}
 
     public String toString(){
-        String str = ""+firstName+" "+lastName;
+        String str = "FirstName:"+firstName+" Lastname:"+lastName+"Role: "+role;
         return str;
     }
 }
