@@ -35,5 +35,17 @@
             android:gravity="center"
             android:text="You are logged in as a"
             android:textSize="24sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/SignOut"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Sign Out" />
+
     </LinearLayout>
 </RelativeLayout>
