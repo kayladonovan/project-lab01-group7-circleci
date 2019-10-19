@@ -14,7 +14,7 @@ class User
 class Administrator
 {
   isA User;
-  1..* -- 1 LoginInfo;
+  1 -- 1 LoginInfo;
 }
 
 class Patient
