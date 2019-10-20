@@ -10,7 +10,7 @@ This is our implementation of deliverable 1 of the Walkin Clinic app.
 | Yutaro Miyata | 8912340 | firebase implementation/ UI modifications |
 | Minh Ta Anh | 300078762 | firebase implementation/ UI modifications |
 | Prashanth Sivoththaman | 8693247 | UML diagrams |
-| Mohannad Shaheen |  | UML diagrams |
+| Mohannad Shaheen | 8571137 | UML diagrams |
 
 ### DIRECTORIES
 - Java files for the classes MainActivity (the login screen), RegistrationWindow (the register user screen), WelcomeWindow and Person (the user class) call all be found within the directory:
