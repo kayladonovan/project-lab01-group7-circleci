@@ -27,9 +27,16 @@ Please note:
 A successful login or registration will appear as: 
 
 - the login screen for a patient looks like:
-- the registration screen for a patient looks like:
-- the welcome screen for a patient looks like:
+![alt text](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable01/screenshots/activity_main..PNG)
 
+- the empty registration screen for a patient looks like:
+![alt text](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable01/screenshots/activity_registration.PNG)
+
+- the correctly filled registration screen for a patient looks like:
+![alt text](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable01/screenshots/activity_registration_filled.PNG)
+
+- the welcome screen for a patient looks like:
+![alt text](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable01/screenshots/activity_welcome_window.PNG)
 
 ### DATABASE
 For our implementation, Firebase was used.
