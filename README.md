@@ -8,7 +8,7 @@ This is our implementation of deliverable 1 of the Walkin Clinic app.
 | Kayla Donovan | 300057156 |
 | Mahnam Nauman |  |
 | Yutaro Miyata |  |
-| Minh Ta Anh |  |
+| Minh Ta Anh | 300078762 |
 | Prashanth Sivoththaman |  |
 | Mohannad Shaheen |  |
 
