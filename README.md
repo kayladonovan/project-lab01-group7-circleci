@@ -1,4 +1,4 @@
-﻿# Walkin Clinic DELIVIERABLE 1
+﻿# Walkin Clinic DELIVERABLE 1
 
 This is our implementation of deliverable 1 of the Walkin Clinic app. 
 
@@ -44,10 +44,10 @@ Our database: https://console.firebase.google.com/u/1/project/walkinclinicv01/ov
 
 Please also note: the admin user is stored as 
 (under the directory : https://console.firebase.google.com/u/1/project/walkinclinicv01/database/walkinclinicv01/data)
-    firstName = 'John'
-    lastName = 'Doe'
-    role = 'Admin'
-    userName = 'admin'
+> firstName = 'John'
+> lastName = 'Doe'
+> role = 'Admin'
+> userName = 'admin'
 
 ### UML DIAGRAM
 The UML diagram for our system can be found in the folder UML. Within the directory, there is a PNG file of the diagram as well as the corresponding umple code.
