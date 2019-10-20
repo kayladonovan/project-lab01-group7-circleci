@@ -3,14 +3,14 @@
 This is our implementation of deliverable 1 of the Walkin Clinic app. 
 
 ## Team Members
-| Name | Student Number |
-| --- | --- |
-| Kayla Donovan | 300057156 |
-| Mahnam Nauman |  |
-| Yutaro Miyata |  |
-| Minh Ta Anh | 300078762 |
-| Prashanth Sivoththaman |  |
-| Mohannad Shaheen |  |
+| Name | Student Number | Tasks | 
+| --- | --- | --- |
+| Kayla Donovan | 300057156 | create UI |
+| Mahnam Nauman |  | password management | 
+| Yutaro Miyata |  | firebase implementation/ UI modifications |
+| Minh Ta Anh | 300078762 | firebase implementation/ UI modifications |
+| Prashanth Sivoththaman |  | UML diagrams |
+| Mohannad Shaheen |  | UML diagrams |
 
 ### DIRECTORIES
 - Java files for the classes MainActivity (the login screen), RegistrationWindow (the register user screen), WelcomeWindow and Person (the user class) call all be found within the directory:
