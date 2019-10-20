@@ -6,7 +6,7 @@ This is our implementation of deliverable 1 of the Walkin Clinic app.
 | Name | Student Number | Tasks | 
 | --- | --- | --- |
 | Kayla Donovan | 300057156 | create UI |
-| Mahnam Nauman |  | password management | 
+| Mahnam Nauman | 8281780 | password management | 
 | Yutaro Miyata |  | firebase implementation/ UI modifications |
 | Minh Ta Anh | 300078762 | firebase implementation/ UI modifications |
 | Prashanth Sivoththaman | 8693247 | UML diagrams |
