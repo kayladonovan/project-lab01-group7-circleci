@@ -12,7 +12,7 @@ This is our implementation of deliverable 1 of the Walkin Clinic app.
 | Prashanth Sivoththaman |  |
 | Mohannad Shaheen |  |
 
-###DIRECTORIES
+### DIRECTORIES
 - Java files for the classes MainActivity (the login screen), RegistrationWindow (the register user screen), WelcomeWindow and Person (the user class) call all be found within the directory:
 	WalkinClinic > app > src > main > java > com > example > walkinClinicv01
 
@@ -22,7 +22,7 @@ We did not implement seperate class files for each type of user, instead this wa
 - XML files for the activities acivity_main, activity_registration, and activity_welcome_window can be found in the directory:
 	WalkinClinic > app > src > main > res > layout
 
-###RUNTIME SCREENSHOTS
+### RUNTIME SCREENSHOTS
 Please note:
 A successful login or registration will appear as: 
 
@@ -31,7 +31,7 @@ A successful login or registration will appear as:
 - the welcome screen for a patient looks like:
 
 
-###DATABASE
+### DATABASE
 For our implementation, Firebase was used.
 Our database: https://console.firebase.google.com/u/1/project/walkinclinicv01/overview
 
@@ -42,5 +42,5 @@ Please also note: The admin user is stored as
 		role = 'Admin'
 		userName = 'admin'
 
-###UML DIAGRAM
+### UML DIAGRAM
 The UML diagram for our system can be found in the folder UML. Within the directory, there is a PNG file of the diagram as well as the corresponding umple code.
