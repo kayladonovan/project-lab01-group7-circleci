@@ -44,9 +44,9 @@ Our database: https://console.firebase.google.com/u/1/project/walkinclinicv01/ov
 
 Please also note: the admin user is stored as 
 (under the directory : https://console.firebase.google.com/u/1/project/walkinclinicv01/database/walkinclinicv01/data)
-> firstName = 'John'
-> lastName = 'Doe'
-> role = 'Admin'
+> firstName = 'John',
+> lastName = 'Doe',
+> role = 'Admin',
 > userName = 'admin'
 
 ### UML DIAGRAM
