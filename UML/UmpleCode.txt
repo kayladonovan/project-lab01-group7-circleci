@@ -1,0 +1,101 @@
+UMPLE code for UML diagram:
+
+class Person
+{
+  firstName;
+  lastName;
+  userName;
+  role;
+  
+    1 -- 0..1 WelcomeWindow;
+  1 -- 0..1 RegistrationWindow;
+public String toString(){}
+  
+  public String getUsername(){}
+  
+  public String getFirstname(){}
+  
+  public String getLastname(){}
+  
+  public String getrole(){}
+  
+
+  
+}
+
+class WelcomeWindow
+{
+  
+  FirebaseAuth mAuth;
+  FirebaseUser mUser;
+  DatabaseReference mDatabase;
+  TextView firstNameTextView;
+  TextView roleTextView;
+  Button userSignOut;
+  
+  public void onCreate(Bundle savedInstanceState){}
+  
+  
+  }
+
+class RegistrationWindow
+{
+    FireBaseAuth mAuth;
+  FirebaseDatabase mDataBase;
+  DatabaseReference myRef;
+  EditText editTextUserName;
+  EditText editTextPassword;
+  EditText editTextFirstName;
+  EditText editTextLastName;
+  EditText editTextConfirmation;
+  EditText editTextUserRole;
+  
+  
+    public void onCreate(Bundle savedInstanceState) {}
+  
+  private void registerUser() {}
+  
+  public void onClick(View view) {}
+  
+  
+}
+
+class MainActivity
+{
+  EditText UserName;
+  EditText Password;
+  FireBaseAuth firebaseAuth;
+  
+  
+    0..1 -- 1 Person;
+  public void checkLogin(View view) {}
+  
+  public void onCreate(Bundle savedInstanceState) {}
+  
+  public void onClick(View view) {}
+  
+  
+  
+  
+  
+}
+
+
+association {
+  
+  1 MainActivity <@>- 1 RegistrationWindow;
+  
+}
+
+
+association {
+  
+  1 MainActivity <@>- 1 WelcomeWindow;
+  
+}
+
+
+association{
+ 1 RegistrationWindow -> 1 WelcomeWindow;
+}
+
