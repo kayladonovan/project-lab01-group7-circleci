@@ -43,7 +43,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(MainActivity.this, WelcomeWindow.class));
+                            if (UserName.getText().toString().equals("qwe@gmail.com") && Password.getText().toString().equals("123456")) {
+                                startActivity(new Intent(MainActivity.this, AdminScreen.class));
+                            } else
+                                startActivity(new Intent(MainActivity.this, WelcomeWindow.class));
                         } else {
                             Toast.makeText(MainActivity.this, "Invalid Entry", Toast.LENGTH_LONG).show();
                         }
