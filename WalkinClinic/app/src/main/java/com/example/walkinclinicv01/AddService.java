@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -52,7 +53,7 @@ public class AddService extends AppCompatActivity implements View.OnClickListene
 
         myRef = FirebaseDatabase.getInstance().getReference();
         myRef.child("Services").child(serviceName).setValue(service);
-
+        Toast.makeText(this, "Product added", Toast.LENGTH_LONG).show();
 
     }
     @Override
