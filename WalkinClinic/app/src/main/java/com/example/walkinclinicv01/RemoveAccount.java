@@ -44,7 +44,7 @@ public class RemoveAccount extends AppCompatActivity implements View.OnClickList
     }
 
     private void removeUser(){
-        FirebaseAuth.getInstance().
+        FirebaseAuth.getInstance();
     }
 
     @Override
