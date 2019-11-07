@@ -113,8 +113,11 @@ public class RegistrationWindow extends AppCompatActivity implements View.OnClic
 
         myRef = FirebaseDatabase.getInstance().getReference();
         FirebaseUser user = mAuth.getCurrentUser();
-        
+        if(user == null){ //Try logging in again
+            System.out.println(user);
+        }
         myRef.child("users").child(user.getUid()).setValue(person);
+
     }
 
 
