@@ -13,9 +13,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".EditService"></activity>
         <activity android:name=".DeleteService" />
+        <activity android:name=".RemoveAccount" />
         <activity android:name=".AddService" />
         <activity android:name=".AdminScreen" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
