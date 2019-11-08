@@ -44,6 +44,30 @@ public class RemoveAccount extends AppCompatActivity implements View.OnClickList
     }
 
     private void removeUser(){
+
+        //CHANGING the EditText of editTextUserNameToDelete to a String value
+
+        //String username = editTextUserNameToDelete.getText().toString().trim();
+
+
+        //  **************we need a way to access the user id  (uid)  ************
+
+
+        //this is to store the value of the User ID of the user we want deleted
+        String userID="ghjjggjhhbjjvj";  //TO BE CHANGEDD
+
+
+
+        //creating a person object
+        //attributes of this object will repace the attributes of the user to be deletted
+        Person temp= new Person("Patient","nullName","nullLastName","AnEmailYouWouldNeverGuess@gmail.com");
+
+        //replacing user with specific userID with Person temp object
+        DatabaseReference dR= FirebaseDatabase.getInstance().getReference();
+        dR.child("users").child(userID).setValue(temp);
+
+
+
         FirebaseAuth.getInstance();
     }
 
