@@ -1,8 +1,11 @@
 package com.example.walkinclinicv01;
 
+
+
 import androidx.test.annotation.UiThreadTest;
 import androidx.test.rule.ActivityTestRule;
 
+import android.widget.Button;
 import android.widget.TextView;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -17,10 +20,11 @@ public class MainActivityTest {
     private MainActivity myActivity=null;
     private TextView text;
     private TextView text2;
+    private Button login;
 
 
     @Before
-    public void setUp() throws Exception{
+    public void setUp() {
         myActivity=myActivityTestRule.getActivity();
     }
 
@@ -34,6 +38,10 @@ public class MainActivityTest {
 
         text2=myActivity.findViewById(R.id.password);
         text2.setText("123456");
+
+        login=myActivity.findViewById(R.id.signIn);
+
+        login.performClick();
 
 
 
