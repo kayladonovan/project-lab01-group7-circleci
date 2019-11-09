@@ -15,10 +15,15 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".EditService"></activity>
         <activity android:name=".DeleteService" />
+<<<<<<< HEAD
         <activity android:name=".RemoveAccount"/>
+=======
+        <activity android:name=".RemoveAccount" />
+>>>>>>> 7305fd6ee0d065110ea294853f1dfd601155eb6e
         <activity android:name=".AddService" />
         <activity android:name=".AdminScreen" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

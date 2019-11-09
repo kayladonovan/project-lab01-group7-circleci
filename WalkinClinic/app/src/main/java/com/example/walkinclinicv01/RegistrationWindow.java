@@ -133,6 +133,7 @@ public class RegistrationWindow extends AppCompatActivity implements View.OnClic
         switch (view.getId()){
             case R.id.button:
                 registerUser();
+
                 break;
             case R.id.logIn:
                 startActivity(new Intent(this,MainActivity.class));

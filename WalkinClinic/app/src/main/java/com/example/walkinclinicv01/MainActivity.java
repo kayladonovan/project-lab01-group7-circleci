@@ -1,16 +1,13 @@
 package com.example.walkinclinicv01;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.text.TextUtils;
-import android.view.View;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -36,30 +33,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Password = (EditText) findViewById(R.id.password);
 
         firebaseAuth = firebaseAuth.getInstance();
-
+        firebaseAuth.signOut();                              //sign out last user
+        //System.out.println("Email:"+firebaseAuth.getCurrentUser().getEmail()+",UId:"+firebaseAuth.getCurrentUser().getUid());
     }
 
 
     public void checkLogin(final View view) {
-        if (TextUtils.isEmpty(UserName.getText().toString()) || TextUtils.isEmpty(Password.getText().toString())){
-            Toast.makeText(MainActivity.this, "Fields are empty", Toast.LENGTH_LONG).show();
-         } else {
-            firebaseAuth.signInWithEmailAndPassword(UserName.getText().toString(), Password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        if (UserName.getText().toString().equals("qwe@gmail.com") && Password.getText().toString().equals("123456")) {
-                            startActivity(new Intent(MainActivity.this, AdminScreen.class));
-                        } else {
-                            startActivity(new Intent(MainActivity.this, WelcomeWindow.class));
-                        }
-                    } else {
-                        Toast.makeText(MainActivity.this, "Invalid Entry", Toast.LENGTH_LONG).show();
-                    }
-
+        firebaseAuth.signInWithEmailAndPassword(UserName.getText().toString(), Password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    if (UserName.getText().toString().equals("qwe@gmail.com") && Password.getText().toString().equals("123456")) {
+                        startActivity(new Intent(MainActivity.this, AdminScreen.class));
+                    } else
+                        startActivity(new Intent(MainActivity.this, WelcomeWindow.class));
+                } else {
+                    Toast.makeText(MainActivity.this, "Invalid Entry", Toast.LENGTH_LONG).show();
                 }
-            });
-        }
+
+            }
+        });
     }
 
     @Override

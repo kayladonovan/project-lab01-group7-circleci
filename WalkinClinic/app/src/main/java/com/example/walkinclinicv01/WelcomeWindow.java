@@ -44,6 +44,7 @@ public class WelcomeWindow extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Person person = dataSnapshot.getValue(Person.class);
+
                 firstNameTextView.setText(person.getFirstName());
                 roleTextView.setText(person.getRole());
             }

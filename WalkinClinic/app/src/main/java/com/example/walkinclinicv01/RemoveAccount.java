@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.lang.Object;
 
-
 import com.google.firebase.auth.UserInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RemoveAccount extends AppCompatActivity implements View.OnClickListener  {
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
+    private FirebaseDatabase mDatabase;
     private DatabaseReference myRef;
     FirebaseUser firebaseUser;
 
@@ -45,9 +44,31 @@ public class RemoveAccount extends AppCompatActivity implements View.OnClickList
     }
 
     private void removeUser(){
-        mAuth = FirebaseAuth.getInstance();
+
+        //CHANGING the EditText of editTextUserNameToDelete to a String value
+
+        //String username = editTextUserNameToDelete.getText().toString().trim();
 
 
+        //  **************we need a way to access the user id  (uid)  ************
+
+
+        //this is to store the value of the User ID of the user we want deleted
+        String userID="ghjjggjhhbjjvj";  //TO BE CHANGEDD
+
+
+
+        //creating a person object
+        //attributes of this object will repace the attributes of the user to be deletted
+        Person temp= new Person("Patient","nullName","nullLastName","AnEmailYouWouldNeverGuess@gmail.com");
+
+        //replacing user with specific userID with Person temp object
+        DatabaseReference dR= FirebaseDatabase.getInstance().getReference();
+        dR.child("users").child(userID).setValue(temp);
+
+
+
+        FirebaseAuth.getInstance();
     }
 
     @Override
