@@ -1,27 +1,18 @@
 package com.example.walkinclinicv01;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.util.Patterns;
-import android.view.View;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.util.Patterns;
+import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class RegistrationWindow extends AppCompatActivity implements View.OnClickListener {
 
@@ -106,27 +97,43 @@ public class RegistrationWindow extends AppCompatActivity implements View.OnClic
 
         final Person person = new Person(userRole, FirstName, LastName, username);
 
-
         mAuth = FirebaseAuth.getInstance();
-        mAuth.createUserWithEmailAndPassword(username, password);
-        mAuth.signInWithEmailAndPassword(username,password);
+        mAuth.createUserWithEmailAndPassword(username, password).addOnCompleteListener(this,
+                task ->{
+                        if(task.isSuccessful()){
+                            mAuth = FirebaseAuth.getInstance();
+                            myRef = FirebaseDatabase.getInstance().getReference();
+                            FirebaseUser user = mAuth.getCurrentUser();
 
-        myRef = FirebaseDatabase.getInstance().getReference();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if(user == null){ //Try logging in again
-            System.out.println(user);
-        }
-        myRef.child("users").child(user.getUid()).setValue(person);
+                            myRef.child("users").child(user.getUid()).setValue(person).addOnCompleteListener(this,
+                                    task1 -> {
+                                        if(task1.isSuccessful()){
+                                            startActivity(new Intent(RegistrationWindow.this, WelcomeWindow.class));
+                                        } else{
+                                            Toast.makeText(RegistrationWindow.this, "cannot make account", Toast.LENGTH_LONG).show();
+                                        }
+                                    });
+
+
+                        }else{
+                            Toast.makeText(RegistrationWindow.this, "Failed to create account!", Toast.LENGTH_LONG).show();
+                        }
+
+                });
 
     }
 
 
+
+
+
     @Override
     public void onClick(View view) {
+
         switch (view.getId()){
             case R.id.button:
                 registerUser();
-                startActivity(new Intent(RegistrationWindow.this, WelcomeWindow.class));
+
                 break;
             case R.id.logIn:
                 startActivity(new Intent(this,MainActivity.class));

@@ -2,12 +2,13 @@ package com.example.walkinclinicv01;
 
 
 
-import androidx.test.annotation.UiThreadTest;
-import androidx.test.rule.ActivityTestRule;
 
 import android.widget.Button;
 import android.widget.TextView;
-import static org.junit.Assert.*;
+
+import androidx.test.annotation.UiThreadTest;
+import androidx.test.rule.ActivityTestRule;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

@@ -1,14 +1,13 @@
 package com.example.walkinclinicv01;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import android.view.View;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,7 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Password = (EditText) findViewById(R.id.password);
 
         firebaseAuth = firebaseAuth.getInstance();
-
+        firebaseAuth.signOut();                              //sign out last user
+        //System.out.println("Email:"+firebaseAuth.getCurrentUser().getEmail()+",UId:"+firebaseAuth.getCurrentUser().getUid());
     }
 
 
