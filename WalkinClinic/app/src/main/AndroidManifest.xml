@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.walkinclinicv01">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,9 +11,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".EditService"></activity>
         <activity android:name=".DeleteService" />
+        <activity android:name=".RemoveAccount"/>
         <activity android:name=".AddService" />
         <activity android:name=".AdminScreen" />
         <activity android:name=".MainActivity">
@@ -22,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WelcomeWindow" />
+        <activity android:name=".WelcomeWindow"/>
         <activity android:name=".RegistrationWindow" />
     </application>
 

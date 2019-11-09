@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.lang.Object;
 
+
 import com.google.firebase.auth.UserInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RemoveAccount extends AppCompatActivity implements View.OnClickListener  {
     private FirebaseAuth mAuth;
-    private FirebaseDatabase mDatabase;
+    private DatabaseReference mDatabase;
     private DatabaseReference myRef;
     FirebaseUser firebaseUser;
 
@@ -44,7 +45,9 @@ public class RemoveAccount extends AppCompatActivity implements View.OnClickList
     }
 
     private void removeUser(){
-        FirebaseAuth.getInstance().
+        mAuth = FirebaseAuth.getInstance();
+
+
     }
 
     @Override
