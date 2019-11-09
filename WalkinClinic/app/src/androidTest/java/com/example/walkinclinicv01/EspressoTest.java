@@ -25,6 +25,7 @@ public class EspressoTest {
     @Rule
     public ActivityTestRule<MainActivity> mainActivityActivityTestRule=new ActivityTestRule<>(MainActivity.class);
 
+
     @Test
     public void adminlogin(){
         onView(withId(R.id.username)).perform(typeText("qwe@gmail.com"),closeSoftKeyboard());
@@ -32,4 +33,16 @@ public class EspressoTest {
 
         onView(withId(R.id.signIn)).perform(click());
     }
+
+    @Rule
+    public ActivityTestRule<AdminScreen> mainActivityActivityTestRule2=new ActivityTestRule<>(AdminScreen.class);
+
+    @Test
+    public void selectAdminFunction(){
+
+        onView(withId(R.id.addBtn)).perform(click());
+
+    }
+
+
 }
