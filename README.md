@@ -18,6 +18,8 @@ can all be found within the directory:
 	
     WalkinClinic > app > src > main > java > com > example > walkinClinicv01
 
+    ```https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable02/WalkinClinic/app/src/main/java/com/example/walkinclinicv01```
+
     We did not implement seperate class files for each type of user, instead, this was accomplished by storing each user's attributes 
     within our database.
     (To be specific, their role*, first and last names, and email were stored). 
@@ -26,9 +28,13 @@ can all be found within the directory:
 	
     WalkinClinic > app > src > main > res > layout
 
+    ```https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable02/WalkinClinic/app/src/main/res/layout```
+
 - Test files relevant to the features of deliverable 1 and 2 can be found in the directory: 
 	
-     WalkinClinic > app > src > androidTest > java > com > example > walkinClinicv01
+    WalkinClinic > app > src > androidTest > java > com > example > walkinClinicv01
+
+    ```https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable02/WalkinClinic/app/src/androidTest/java/com/example/walkinclinicv01 ```
 
 	Test classes of successfull logins of Admin, Patients and Employees were implemented. Further, tests for expected failed logins were also created. 
 	Note JUnit tests were used. 
