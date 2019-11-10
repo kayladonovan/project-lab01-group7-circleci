@@ -29,7 +29,7 @@ class WelcomeWindow
   TextView roleTextView;
   Button userSignOut;
   
-  public void onCreate(Bundle savedInstanceState){}
+  protected void onCreate(Bundle savedInstanceState){}
   
   
   }
@@ -37,8 +37,11 @@ class WelcomeWindow
 class RegistrationWindow
 {
     FireBaseAuth mAuth;
+   FirebaseAuth mAuth2;
   FirebaseDatabase mDataBase;
   DatabaseReference myRef;
+  FirebaseUser mUser;
+  DatabaseReference mDatabase2;
   EditText editTextUserName;
   EditText editTextPassword;
   EditText editTextFirstName;
@@ -47,7 +50,7 @@ class RegistrationWindow
   EditText editTextUserRole;
   
   
-    public void onCreate(Bundle savedInstanceState) {}
+  protected void onCreate(Bundle savedInstanceState){}
   
   private void registerUser() {}
   
@@ -66,7 +69,7 @@ class MainActivity
     0..1 -- 1 Person;
   public void checkLogin(View view) {}
   
-  public void onCreate(Bundle savedInstanceState) {}
+  protected void onCreate(Bundle savedInstanceState) {}
   
   public void onClick(View view) {}
   
@@ -82,9 +85,10 @@ class AdminScreen{
   1 -- * EditService;
   1 -- * DeleteService;
     1 -- * RemoveAcount;
-public void onCreate(Bundle savedInstanceState) {}
   
-  public void deleteUser(){}
+protected void onCreate(Bundle savedInstanceState) {}
+  
+  public void deleteAccount(){}
   
    public void onClick(View view) {}
 }
@@ -94,7 +98,7 @@ class Service{
 serviceName;
 roleName;
   
-     public void onClick(View view) {}
+    public void onClick(View view) {}
   
   public String getserviceName(){}
   
@@ -106,17 +110,49 @@ roleName;
 
 class DeleteService{
   
+  FirebaseDatabase mDataBase;
+DatabaseReference myRef;
+    EditText EditTextDeleteServiceName;
+  
 protected void onCreate(Bundle savedInstanceState){}
+  
+  private void deleteService() {}
+  
+  public void onClick(View v){}
 }
 
 class EditService{
+  
+  FirebaseDatabase mDataBase;
+DatabaseReference myRef;
+   EditText EditTextOldServiceName;
+  EditText EditTextNewServiceName;
+  EditText EditTextNewRoleName;
+  
   protected void onCreate(Bundle savedInstanceState){}
+  
+  private void replaceOldService() {}
+  
+  private void addNewService() {}
+  
+  private void editService() {}
+  
+  public void onClick(View v){}
 }
 
 class AddService{
+  
+ FirebaseDatabase mDataBase;
+ DatabaseReference myRef;
+ EditText EditTextServiceName;
+  EditText EditTextRoleName;
+  
+  private void addService() {}
+  public void onClick(View v){}
+  protected void onCreate(Bundle savedInstanceState){}
 
   * -- 1 AdminScreen;
-protected void onCreate(Bundle savedInstanceState){}
+
 }
 
 class RemoveAcount{
@@ -155,5 +191,4 @@ association{
 association{
  1 MainActivity <@>- 1 AdminScreen;
 }
-
 
