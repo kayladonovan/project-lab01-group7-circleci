@@ -1,6 +1,6 @@
 # Walkin Clinic DELIVERABLE 2
 
-This is our implementation of deliverable 2 of the Walkin Clinic app. 
+This is our implementation of deliverable 2 of the Walkin Clinic app.
 
 ## Team Members
 | Name | Student Number | Tasks | 
@@ -17,7 +17,8 @@ This is our implementation of deliverable 2 of the Walkin Clinic app.
 can all be found within the directory:
 	WalkinClinic > app > src > main > java > com > example > walkinClinicv01
 
-    We did not implement seperate class files for each type of user, instead, this was accomplished by storing each user's attributes within our database.
+    We did not implement seperate class files for each type of user, instead, this was accomplished by storing each user's attributes 
+    within our database.
     (To be specific, their role*, first and last names, and email were stored). 
 
 - XML files for the newly added activities acivity_add_service, activity_delete_service, activity_edit_service, activity_remove_account and activity_admin_screen can be found in the directory:
@@ -26,7 +27,8 @@ can all be found within the directory:
 - Test files relevant to the features of deliverable 1 and 2 can be found in the directory: 
 	WalkinClinic > app > src > androidTest > java > com > example > walkinClinicv01
 
-	Tests of successfull and expected failed logins of Admin, Patients and Employees were implemented.
+	Test classes of successfull logins of Admin, Patients and Employees were implemented. Further, tests for expected failed logins were also created. 
+	Note both JUnit tests and Espresso tests were used. 
 
 ### RUNTIME SCREENSHOTS
 Please note:
@@ -34,27 +36,31 @@ A successful login of the Administrator will appear as:
 
 - the login screen for admin looks like:
 
-![alt text]()
+![login](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/adminLogin.png)
 
 - the welcome screen for admin looks like:
 
-![alt text]()
+scroll view, part 1/2
+![welcome](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/scrollViewAdminScreen1.png)
+
+scroll view, part 1/2
+![welcome](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/scrollViewAdminScreen2.png)
 
 - after clicking the 'Add Service' button brings you to the AddService screen which looks like:
 
-![alt text]()
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/addServiceScreen.png)
 
 - after clicking the 'Edit Service' button brings you to the EditService screen which looks like:
 
-![alt text]()
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/editServiceScreen.png)
 
 - after clicking the 'Delete Service' button brings you to the DeleteService screen which looks like:
 
-![alt text]()
+![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/deleteServiceScreen.png)
 
 - after clicking the 'Remove Account' button brings you to the RemoveService screen which looks like:
 
-![alt text]()
+![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/removeUserScreen.png)
 
 
 ### DATABASE
