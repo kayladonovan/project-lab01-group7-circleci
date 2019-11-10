@@ -49,6 +49,9 @@ public class AdminScreen extends AppCompatActivity implements View.OnClickListen
             case R.id.removeUser:
                 startActivity(new Intent(AdminScreen.this, RemoveAccount.class));
                 break;
+            case R.id.deleteBtn:
+                startActivity(new Intent(AdminScreen.this, DeleteService.class));
+                break;
         }
     }
 }

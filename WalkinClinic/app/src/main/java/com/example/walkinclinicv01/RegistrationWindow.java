@@ -113,8 +113,6 @@ public class RegistrationWindow extends AppCompatActivity implements View.OnClic
                                         Toast.makeText(RegistrationWindow.this, "cannot make account", Toast.LENGTH_LONG).show();
                                     }
                                 });
-
-
                     }else{
                         Toast.makeText(RegistrationWindow.this, "Failed to create account!", Toast.LENGTH_LONG).show();
                     }
