@@ -31,7 +31,7 @@ can all be found within the directory:
      WalkinClinic > app > src > androidTest > java > com > example > walkinClinicv01
 
 	Test classes of successfull logins of Admin, Patients and Employees were implemented. Further, tests for expected failed logins were also created. 
-	Note both JUnit tests and Espresso tests were used. 
+	Note JUnit tests were used. 
 
 ### RUNTIME SCREENSHOTS
 Please note:
