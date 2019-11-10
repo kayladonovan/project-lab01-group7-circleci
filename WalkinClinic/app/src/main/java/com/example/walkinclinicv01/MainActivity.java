@@ -17,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
     //private Button signInButton;
     //private Button registerButton
     EditText UserName, Password;
