@@ -59,17 +59,38 @@ scroll view, part 1/2
 
 ![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/addServiceScreen.png)
 
+A successful creation of a service in the app looks like:
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/successfulAddServiceScreen.png)
+ 
+A successful creation of a service in the DB looks like:
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/dbUpdate1.png)
+
 - after clicking the 'Edit Service' button brings you to the EditService screen which looks like:
 
 ![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/editServiceScreen.png)
+
+A successful edit of a service in the app looks like:
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/editServiceConfirmation.png)
+
+A successful edit of a service in the DB looks like:
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/dbUpdate2.png)
+
+An unsuccessful edit of a service in the app looks like:
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/invalidEntry1.png)
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/invalidEntry2.png)
 
 - after clicking the 'Delete Service' button brings you to the DeleteService screen which looks like:
 
 ![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/deleteServiceScreen.png)
 
 - after clicking the 'Remove Account' button brings you to the RemoveService screen which looks like:
-
 ![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/removeUserScreen.png)
+
+After removing the DB looks like:
+![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/dbUpdate3.PNG)
+
+An unsuccessful removal of a service in the app looks like:
+![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/unsuccessfulDeleteServiceScreen.png)
 
 
 ### DATABASE
