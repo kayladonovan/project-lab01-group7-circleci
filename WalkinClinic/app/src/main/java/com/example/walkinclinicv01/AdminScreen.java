@@ -42,15 +42,15 @@ public class AdminScreen extends AppCompatActivity implements View.OnClickListen
             case R.id.editBtn:
                 startActivity(new Intent(AdminScreen.this, EditService.class));
                 break;
+            case R.id.deleteBtn:
+                startActivity(new Intent(AdminScreen.this, DeleteService.class));
+                break;
             case R.id.logout:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(AdminScreen.this, MainActivity.class));
                 break;
             case R.id.removeUser:
                 startActivity(new Intent(AdminScreen.this, RemoveAccount.class));
-                break;
-            case R.id.deleteBtn:
-                startActivity(new Intent(AdminScreen.this, DeleteService.class));
                 break;
         }
     }

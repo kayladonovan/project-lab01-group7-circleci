@@ -25,7 +25,7 @@ public class RegisterTest {
     }
 
     @Test
-    @UiThreadTest
+
     public void registerPatient (){
         email = registerAction.findViewById(R.id.username);
         password = registerAction.findViewById(R.id.password);

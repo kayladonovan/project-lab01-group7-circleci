@@ -38,13 +38,13 @@ public class AddService extends AppCompatActivity implements View.OnClickListene
         String roleName = EditTextRoleName.getText().toString().trim();
 
         if (serviceName.isEmpty()) {
-            EditTextServiceName.setError("Email is Required");
+            EditTextServiceName.setError("Service name is Required");
             EditTextServiceName.requestFocus();
             return ;
         }
 
         if (roleName.isEmpty()) {
-            EditTextRoleName.setError("Password is required");
+            EditTextRoleName.setError("Role is required");
             EditTextRoleName.requestFocus();
             return ;
         }
@@ -53,7 +53,7 @@ public class AddService extends AppCompatActivity implements View.OnClickListene
 
         myRef = FirebaseDatabase.getInstance().getReference();
         myRef.child("Services").child(serviceName).setValue(service);
-        Toast.makeText(this, "Product added", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Service added", Toast.LENGTH_LONG).show();
 
     }
     @Override
@@ -61,7 +61,6 @@ public class AddService extends AppCompatActivity implements View.OnClickListene
         switch(v.getId()){
             case R.id.createBtn:
                 addService();
-                startActivity(new Intent(AddService.this,AdminScreen.class));
                 break;
             case R.id.cancelBtn:
                 startActivity(new Intent(this,AdminScreen.class));
