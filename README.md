@@ -8,7 +8,7 @@ This is our implementation of deliverable 2 of the Walkin Clinic app.
 | Kayla Donovan | 300057156 | displays |
 | Mahnam Nauman | 8281780 | UML diagram | 
 | Yutaro Miyata | 8912340 | add service |
-| Minh Ta Anh | 300078762 | admin class methods and authentication |
+| Minh Ta Anh | 300078762 | admin class methods and authentication and create testing methods|
 | Prashanth Sivoththaman | 8693247 | test classes |
 | Mohannad Shaheen | 8571137 | edit, delete service |
 
