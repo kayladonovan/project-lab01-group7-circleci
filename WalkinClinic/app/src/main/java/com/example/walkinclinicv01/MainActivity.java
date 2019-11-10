@@ -38,20 +38,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public void checkLogin(final View view) {
-        firebaseAuth.signInWithEmailAndPassword(UserName.getText().toString(), Password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    if (UserName.getText().toString().equals("qwe@gmail.com") && Password.getText().toString().equals("123456")) {
-                        startActivity(new Intent(MainActivity.this, AdminScreen.class));
-                    } else
-                        startActivity(new Intent(MainActivity.this, WelcomeWindow.class));
-                } else {
-                    Toast.makeText(MainActivity.this, "Invalid Entry", Toast.LENGTH_LONG).show();
-                }
 
+        String username = UserName.getText().toString().trim();
+        String password = Password.getText().toString().trim();
+        if (username.isEmpty() || password.isEmpty()){
+            if (username.isEmpty()) {
+                UserName.setError("Email is required");
+                UserName.requestFocus();
+                return;
+            } else{
+                Password.setError("Password is required");
+                Password.requestFocus();
+                return;
             }
-        });
+        }else {
+            firebaseAuth.signInWithEmailAndPassword(UserName.getText().toString(), Password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        if (UserName.getText().toString().equals("qwe@gmail.com") && Password.getText().toString().equals("123456")) {
+                            startActivity(new Intent(MainActivity.this, AdminScreen.class));
+                        } else
+                            startActivity(new Intent(MainActivity.this, WelcomeWindow.class));
+                    } else {
+                        Toast.makeText(MainActivity.this, "Invalid Entry", Toast.LENGTH_LONG).show();
+                    }
+
+                }
+            });
+        }
     }
 
     @Override
