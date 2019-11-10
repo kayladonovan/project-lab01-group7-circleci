@@ -16,7 +16,7 @@ This is our implementation of deliverable 2 of the Walkin Clinic app.
 - Java files for the classes added, specifically the AdminScreen (successful Admin login screen), AddService, DeleteService, EditService, and RemoveAccount
 can all be found within the directory:
 	
-	```WalkinClinic > app > src > main > java > com > example > walkinClinicv01
+    WalkinClinic > app > src > main > java > com > example > walkinClinicv01
 
     We did not implement seperate class files for each type of user, instead, this was accomplished by storing each user's attributes 
     within our database.
@@ -24,11 +24,11 @@ can all be found within the directory:
 
 - XML files for the newly added activities acivity_add_service, activity_delete_service, activity_edit_service, activity_remove_account and activity_admin_screen can be found in the directory:
 	
-	```WalkinClinic > app > src > main > res > layout
+    WalkinClinic > app > src > main > res > layout
 
 - Test files relevant to the features of deliverable 1 and 2 can be found in the directory: 
 	
-	```WalkinClinic > app > src > androidTest > java > com > example > walkinClinicv01
+     WalkinClinic > app > src > androidTest > java > com > example > walkinClinicv01
 
 	Test classes of successfull logins of Admin, Patients and Employees were implemented. Further, tests for expected failed logins were also created. 
 	Note both JUnit tests and Espresso tests were used. 
