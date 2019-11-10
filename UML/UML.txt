@@ -1,5 +1,3 @@
-UMPLE code for UML diagram:
-
 class Person
 {
   firstName;
@@ -18,8 +16,6 @@ public String toString(){}
   public String getLastname(){}
   
   public String getrole(){}
-  
-
   
 }
 
@@ -74,8 +70,64 @@ class MainActivity
   
   public void onClick(View view) {}
   
+}
+
+class AdminScreen{
   
+  mAuth FireBaseAuth;
+   FirebaseUser mUser;
+  DatabaseReference mDatabase;
   
+    1 -- * Service;
+  1 -- * EditService;
+  1 -- * DeleteService;
+    1 -- * RemoveAcount;
+public void onCreate(Bundle savedInstanceState) {}
+  
+  public void deleteUser(){}
+  
+   public void onClick(View view) {}
+}
+
+class Service{
+  
+serviceName;
+roleName;
+  
+     public void onClick(View view) {}
+  
+  public String getserviceName(){}
+  
+  public String getroleName(){}
+  
+  public String toString(){}
+
+}
+
+class DeleteService{
+  
+protected void onCreate(Bundle savedInstanceState){}
+}
+
+class EditService{
+  protected void onCreate(Bundle savedInstanceState){}
+}
+
+class AddService{
+
+  * -- 1 AdminScreen;
+protected void onCreate(Bundle savedInstanceState){}
+}
+
+class RemoveAcount{
+FirebaseAuth mAuth;
+FirebaseDatabase mDatabase;
+DatabaseReference myRef;
+ FirebaseUser firebaseUser;
+  
+    protected void onCreate(Bundle savedInstanceState){}
+  private void removeUser(){}  
+  public void onClick(View v) {}  
   
   
 }
@@ -98,4 +150,10 @@ association {
 association{
  1 RegistrationWindow -> 1 WelcomeWindow;
 }
+
+
+association{
+ 1 MainActivity <@>- 1 AdminScreen;
+}
+
 
