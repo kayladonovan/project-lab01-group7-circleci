@@ -2,7 +2,6 @@ package com.example.walkinclinicv01;
 
 
 
-
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -15,7 +14,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class MainActivityTest {
+
+public class SuccessAdminLoginTest {
 
     @Rule
     public ActivityTestRule<MainActivity> myActivityTestRule= new ActivityTestRule(MainActivity.class);

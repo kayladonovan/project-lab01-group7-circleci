@@ -1,8 +1,6 @@
 package com.example.walkinclinicv01;
 
 
-
-
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -15,8 +13,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class MainActivityTest {
 
+
+public class FailAdminLoginTest {
     @Rule
     public ActivityTestRule<MainActivity> myActivityTestRule= new ActivityTestRule(MainActivity.class);
 
@@ -40,7 +39,7 @@ public class MainActivityTest {
         text.setText("qwe@gmail.com");
 
         text2=myActivity.findViewById(R.id.password);
-        text2.setText("123456");
+        text2.setText("12345556");
 
         String check=text.getText().toString();
         String check2=text2.getText().toString();
@@ -52,5 +51,4 @@ public class MainActivityTest {
 
 
     }
-
 }
