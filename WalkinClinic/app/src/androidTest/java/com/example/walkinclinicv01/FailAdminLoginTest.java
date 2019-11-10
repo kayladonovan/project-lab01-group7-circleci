@@ -7,11 +7,11 @@ import android.widget.TextView;
 import androidx.test.annotation.UiThreadTest;
 import androidx.test.rule.ActivityTestRule;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 
 
@@ -43,6 +43,19 @@ public class FailAdminLoginTest {
 
         String check=text.getText().toString();
         String check2=text2.getText().toString();
+
+
+
+        myActivity.runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+
+                // Stuff that updates the UI
+                myActivity.findViewById(R.id.signIn).performClick();
+
+            }
+        });
 
 
         assertEquals("qwe@gmail.com",check);
