@@ -38,40 +38,7 @@ can all be found within the directory:
 
 	Test classes of successfull logins of Admin, Patients and Employees were implemented. Further, tests for expected failed logins were also created. 
 	Note JUnit tests were used. 
-
-### RUNTIME SCREENSHOTS
-Please note:
-A successful login of the Administrator will appear as: 
-
-- the login screen for admin looks like:
-
-![login](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/adminLogin.png)
-
-- the welcome screen for admin looks like:
-
-scroll view, part 1/2
-![welcome](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/scrollViewAdminScreen1.png)
-
-scroll view, part 1/2
-![welcome](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/scrollViewAdminScreen2.png)
-
-- after clicking the 'Add Service' button brings you to the AddService screen which looks like:
-
-![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/addServiceScreen.png)
-
-- after clicking the 'Edit Service' button brings you to the EditService screen which looks like:
-
-![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/editServiceScreen.png)
-
-- after clicking the 'Delete Service' button brings you to the DeleteService screen which looks like:
-
-![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/deleteServiceScreen.png)
-
-- after clicking the 'Remove Account' button brings you to the RemoveService screen which looks like:
-
-![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/removeUserScreen.png)
-
-
+	
 ### DATABASE
 For our implementation, Firebase was used.
 Our database: https://console.firebase.google.com/u/1/project/walkinclinicv01/overview
@@ -88,3 +55,55 @@ Please also note: the admin user is stored as
 
 ### UML DIAGRAM
 The UML diagram for our system can be found in the folder UML. Within the directory, there is a PNG file of the diagram as well as the corresponding umple code.
+
+### RUNTIME SCREENSHOTS
+
+#### The login screen for admin looks like:
+
+![login](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/adminLogin.png)
+
+#### The welcome screen for admin looks like:
+
+scroll view, part 1/2
+![welcome](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/scrollViewAdminScreen1.png)
+
+scroll view, part 1/2
+![welcome](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/scrollViewAdminScreen2.png)
+
+#### After clicking the 'Add Service' button brings you to the AddService screen which looks like:
+
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/addServiceScreen.png)
+
+- A successful creation of a service in the app looks like:
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/successfulAddServiceScreen.png)
+ 
+- A successful creation of a service in the DB looks like:
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/dbUpdate1.png)
+
+#### After clicking the 'Edit Service' button brings you to the EditService screen which looks like:
+
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/editServiceScreen.png)
+
+- A successful edit of a service in the app looks like:
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/editServiceConfirmation.png)
+
+- A successful edit of a service in the DB looks like:
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/dbUpdate2.png)
+
+- An unsuccessful edit of a service in the app looks like:
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/invalidEntry1.png)
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/invalidEntry2.png)
+
+#### After clicking the 'Delete Service' button brings you to the DeleteService screen which looks like:
+
+![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/deleteServiceScreen.png)
+
+- After removing the DB looks like:
+![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/dbUpdate3.PNG)
+
+- An unsuccessful removal of a service in the app looks like:
+![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/unsuccessfulDeleteServiceScreen.png)
+
+#### After clicking the 'Remove Account' button brings you to the RemoveService screen which looks like:
+![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/removeUserScreen.png)
+
