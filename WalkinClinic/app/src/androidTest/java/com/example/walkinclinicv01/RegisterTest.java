@@ -25,7 +25,7 @@ public class RegisterTest {
     }
 
     @Test
-
+    @UiThreadTest
     public void registerPatient (){
         email = registerAction.findViewById(R.id.username);
         password = registerAction.findViewById(R.id.password);
@@ -81,6 +81,34 @@ public class RegisterTest {
         email.setText(randomString());
 
         password.setText("123456");
+        confirmpassword.setText("123456");
+        firstname.setText("Employee");
+        lastname.setText("You");
+        role.setText("Employee");
+
+        registerAction.runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                // Stuff that updates the UI
+                registerAction.findViewById(R.id.button).performClick();
+
+            }
+        });
+    }
+
+    @Test
+    @UiThreadTest
+    public void registerFail(){
+        email = registerAction.findViewById(R.id.username);
+        password = registerAction.findViewById(R.id.password);
+        confirmpassword = registerAction.findViewById(R.id.confirmPassword);
+        firstname = registerAction.findViewById(R.id.firstName);
+        lastname = registerAction.findViewById(R.id.lastName);
+        role = registerAction.findViewById(R.id.userRole);
+
+        email.setText(randomString());
+        password.setText("");
         confirmpassword.setText("123456");
         firstname.setText("Employee");
         lastname.setText("You");
