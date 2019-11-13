@@ -1,0 +1,194 @@
+class Person
+{
+  firstName;
+  lastName;
+  userName;
+  role;
+  
+    1 -- 0..1 WelcomeWindow;
+  1 -- 0..1 RegistrationWindow;
+public String toString(){}
+  
+  public String getUsername(){}
+  
+  public String getFirstname(){}
+  
+  public String getLastname(){}
+  
+  public String getrole(){}
+  
+}
+
+class WelcomeWindow
+{
+  
+  FirebaseAuth mAuth;
+  FirebaseUser mUser;
+  DatabaseReference mDatabase;
+  TextView firstNameTextView;
+  TextView roleTextView;
+  Button userSignOut;
+  
+  protected void onCreate(Bundle savedInstanceState){}
+  
+  
+  }
+
+class RegistrationWindow
+{
+    FireBaseAuth mAuth;
+   FirebaseAuth mAuth2;
+  FirebaseDatabase mDataBase;
+  DatabaseReference myRef;
+  FirebaseUser mUser;
+  DatabaseReference mDatabase2;
+  EditText editTextUserName;
+  EditText editTextPassword;
+  EditText editTextFirstName;
+  EditText editTextLastName;
+  EditText editTextConfirmation;
+  EditText editTextUserRole;
+  
+  
+  protected void onCreate(Bundle savedInstanceState){}
+  
+  private void registerUser() {}
+  
+  public void onClick(View view) {}
+  
+  
+}
+
+class MainActivity
+{
+  EditText UserName;
+  EditText Password;
+  FireBaseAuth firebaseAuth;
+  
+  
+    0..1 -- 1 Person;
+  public void checkLogin(View view) {}
+  
+  protected void onCreate(Bundle savedInstanceState) {}
+  
+  public void onClick(View view) {}
+  
+}
+
+class AdminScreen{
+  
+  mAuth FireBaseAuth;
+   FirebaseUser mUser;
+  DatabaseReference mDatabase;
+  
+    1 -- * Service;
+  1 -- * EditService;
+  1 -- * DeleteService;
+    1 -- * RemoveAcount;
+  
+protected void onCreate(Bundle savedInstanceState) {}
+  
+  public void deleteAccount(){}
+  
+   public void onClick(View view) {}
+}
+
+class Service{
+  
+serviceName;
+roleName;
+  
+    public void onClick(View view) {}
+  
+  public String getserviceName(){}
+  
+  public String getroleName(){}
+  
+  public String toString(){}
+
+}
+
+class DeleteService{
+  
+  FirebaseDatabase mDataBase;
+DatabaseReference myRef;
+    EditText EditTextDeleteServiceName;
+  
+protected void onCreate(Bundle savedInstanceState){}
+  
+  private void deleteService() {}
+  
+  public void onClick(View v){}
+}
+
+class EditService{
+  
+  FirebaseDatabase mDataBase;
+DatabaseReference myRef;
+   EditText EditTextOldServiceName;
+  EditText EditTextNewServiceName;
+  EditText EditTextNewRoleName;
+  
+  protected void onCreate(Bundle savedInstanceState){}
+  
+  private void replaceOldService() {}
+  
+  private void addNewService() {}
+  
+  private void editService() {}
+  
+  public void onClick(View v){}
+}
+
+class AddService{
+  
+ FirebaseDatabase mDataBase;
+ DatabaseReference myRef;
+ EditText EditTextServiceName;
+  EditText EditTextRoleName;
+  
+  private void addService() {}
+  public void onClick(View v){}
+  protected void onCreate(Bundle savedInstanceState){}
+
+  * -- 1 AdminScreen;
+
+}
+
+class RemoveAcount{
+FirebaseAuth mAuth;
+FirebaseDatabase mDatabase;
+DatabaseReference myRef;
+ FirebaseUser firebaseUser;
+  
+    protected void onCreate(Bundle savedInstanceState){}
+  private void removeUser(){}  
+  public void onClick(View v) {}  
+  
+  
+}
+
+
+association {
+  
+  1 MainActivity <@>- 1 RegistrationWindow;
+  
+}
+
+
+association {
+  
+  1 MainActivity <@>- 1 WelcomeWindow;
+  
+}
+
+
+association{
+ 1 RegistrationWindow -> 1 WelcomeWindow;
+}
+
+
+association{
+ 1 MainActivity <@>- 1 AdminScreen;
+}
+
