@@ -14,7 +14,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="219dp" />
+            android:layout_height="170dp" />
 
         <TextView
             android:id="@+id/welcomeMessage"
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="You are logged in as a"
+            android:text="You are logged in as an"
             android:textSize="24sp" />
 
         <TextView
@@ -63,6 +63,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="create clinic" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <Button
+            android:id="@+id/signOut2"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Out"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 </RelativeLayout>

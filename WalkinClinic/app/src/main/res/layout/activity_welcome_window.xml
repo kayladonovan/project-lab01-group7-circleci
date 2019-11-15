@@ -14,7 +14,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="219dp" />
+            android:layout_height="190dp" />
 
         <TextView
             android:id="@+id/welcomeMessage"
