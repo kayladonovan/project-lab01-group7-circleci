@@ -45,12 +45,13 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textRole"
+            android:id="@+id/patientRole"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:text="Role"
-            android:textSize="26sp" />
+            android:text="@string/patient"
+            android:textSize="24sp" />
 
         <Space
             android:layout_width="match_parent"

@@ -24,7 +24,7 @@ public class WelcomeWindow extends AppCompatActivity {
     DatabaseReference mDatabase;
 
     TextView firstNameTextView;
-    TextView roleTextView;
+    //TextView roleTextView;
 
     Button userSignOut;
 
@@ -34,7 +34,7 @@ public class WelcomeWindow extends AppCompatActivity {
         setContentView(R.layout.activity_welcome_window);
 
         firstNameTextView = (TextView) findViewById(R.id.textFirstName);
-        roleTextView = (TextView) findViewById(R.id.textRole);
+        //roleTextView = (TextView) findViewById(R.id.textRole);
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
@@ -46,7 +46,7 @@ public class WelcomeWindow extends AppCompatActivity {
                 Person person = dataSnapshot.getValue(Person.class);
 
                 firstNameTextView.setText(person.getFirstName());
-                roleTextView.setText(person.getRole());
+                //roleTextView.setText(person.getRole());
             }
 
             @Override
