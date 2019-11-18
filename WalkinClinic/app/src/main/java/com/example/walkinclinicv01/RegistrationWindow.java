@@ -108,7 +108,13 @@ public class RegistrationWindow extends AppCompatActivity implements View.OnClic
                         myRef.child("users").child(user.getUid()).setValue(person).addOnCompleteListener(this,
                                 task1 -> {
                                     if(task1.isSuccessful()){
-                                        startActivity(new Intent(RegistrationWindow.this, WelcomeWindow.class));
+                                        if(person.getRole().equals("Employee")||person.getRole().equals("employee")){
+                                            startActivity(new Intent(RegistrationWindow.this,EmployeeScreen.class));
+                                        }
+                                        else{
+                                            startActivity(new Intent(RegistrationWindow.this, WelcomeWindow.class));
+                                        }
+
                                     } else{
                                         Toast.makeText(RegistrationWindow.this, "cannot make account", Toast.LENGTH_LONG).show();
                                     }

@@ -23,13 +23,15 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="ClinicName"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:visibility="visible"
+            tools:visibility="visible" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="70dp" />
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -56,13 +58,13 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:text="edit service" />
-        </TableRow>
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
@@ -86,13 +88,13 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:text="remove user" />
-        </TableRow>
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
@@ -116,7 +118,7 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:text="view clinic hours " />
-        </TableRow>
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
