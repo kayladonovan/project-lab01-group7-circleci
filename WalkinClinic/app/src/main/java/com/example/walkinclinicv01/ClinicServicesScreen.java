@@ -31,7 +31,6 @@ public class ClinicServicesScreen extends AppCompatActivity implements View.OnCl
 
         ClinicNameTextView = (TextView)findViewById(R.id.clinicName);
         findViewById(R.id.addBtn).setOnClickListener(this);
-        findViewById(R.id.editBtn).setOnClickListener(this);
         findViewById(R.id.deleteBtn).setOnClickListener(this);
         findViewById(R.id.removeUser).setOnClickListener(this);
         findViewById(R.id.clinicHoursBtn).setOnClickListener(this);
@@ -66,13 +65,10 @@ public class ClinicServicesScreen extends AppCompatActivity implements View.OnCl
                 startActivity(new Intent(ClinicServicesScreen.this,MainActivity.class));
                 break;
             case R.id.addBtn:
-                startActivity(new Intent(ClinicServicesScreen.this,AddService.class));
-                break;
-            case R.id.editBtn:
-                startActivity(new Intent(ClinicServicesScreen.this, EditService.class));
+                startActivity(new Intent(ClinicServicesScreen.this,AddServiceToProfile.class));
                 break;
             case R.id.deleteBtn:
-                startActivity(new Intent(ClinicServicesScreen.this,DeleteService.class));
+                startActivity(new Intent(ClinicServicesScreen.this,DeleteServiceFromProfile.class));
                 break;
             case R.id.clinicHoursBtn:
                 startActivity(new Intent(ClinicServicesScreen.this,ClinicHours.class));

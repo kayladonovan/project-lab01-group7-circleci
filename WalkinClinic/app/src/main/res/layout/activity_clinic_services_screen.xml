@@ -53,24 +53,6 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/editBtn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="150dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:text="edit service" />
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <Button
                 android:id="@+id/deleteBtn"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
@@ -78,18 +60,11 @@
                 android:layout_gravity="center"
                 android:text="remove service" />
 
-            <Space
-                android:layout_width="10dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/removeUser"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="150dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:text="remove user" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
         <Space
             android:layout_width="match_parent"
