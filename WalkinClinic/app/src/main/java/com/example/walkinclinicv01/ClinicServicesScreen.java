@@ -3,6 +3,7 @@ package com.example.walkinclinicv01;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -63,7 +64,22 @@ public class ClinicServicesScreen extends AppCompatActivity implements View.OnCl
             case R.id.logout:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(ClinicServicesScreen.this,MainActivity.class));
-
+                break;
+            case R.id.addBtn:
+                startActivity(new Intent(ClinicServicesScreen.this,AddService.class));
+                break;
+            case R.id.editBtn:
+                startActivity(new Intent(ClinicServicesScreen.this, EditService.class));
+                break;
+            case R.id.deleteBtn:
+                startActivity(new Intent(ClinicServicesScreen.this,DeleteService.class));
+                break;
+            case R.id.clinicHoursBtn:
+                startActivity(new Intent(ClinicServicesScreen.this,ClinicHours.class));
+                break;
+            case R.id.employeeHours:
+                startActivity(new Intent(ClinicServicesScreen.this,ListOfHours.class));
+                break;
         }
 
     }
