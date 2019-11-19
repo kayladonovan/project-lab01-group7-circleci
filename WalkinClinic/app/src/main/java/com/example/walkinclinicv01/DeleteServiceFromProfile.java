@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-<<<<<<< HEAD
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,16 +24,11 @@ public class DeleteServiceFromProfile extends AppCompatActivity implements OnCli
     private FirebaseUser mUser;
     private FirebaseAuth mAuth;
     EditText deleteService;
-=======
-
-public class DeleteServiceFromProfile extends AppCompatActivity implements View.OnClickListener{
->>>>>>> 7a266d21eb005d9047adce7a7b1c1cac5da322c2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_service_from_profile);
-<<<<<<< HEAD
         deleteService = (EditText) findViewById(R.id.serviceName);
 
         findViewById(R.id.deleteBtn).setOnClickListener(this);
@@ -51,19 +45,20 @@ public class DeleteServiceFromProfile extends AppCompatActivity implements View.
         String userID = mUser.getUid();
 
         mRef.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child("Clinics").child(userID).child("Services Offered").hasChild(clinicService)){
+
+                if ((dataSnapshot.child("Clinics").child(userID).child("Services Offered").hasChild(clinicService))) {
+
                     mRef.child("Clinics").child(userID).child("Services Offered").child(clinicService).setValue(null);
                     deleteService.setText("");
                     startActivity(new Intent(DeleteServiceFromProfile.this, ClinicServicesScreen.class));
                     Toast.makeText(DeleteServiceFromProfile.this, "Service deleted from clinic", Toast.LENGTH_LONG).show();
 
-                } else{
-
+                } else {
                     Toast.makeText(DeleteServiceFromProfile.this, "Invalid Entry, service cannot be deleted", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(DeleteServiceFromProfile.this, DeleteServiceFromProfile.class));
-
                 }
             }
 
@@ -88,21 +83,3 @@ public class DeleteServiceFromProfile extends AppCompatActivity implements View.
     }
 
 }
-=======
-
-        findViewById(R.id.deleteBtn).setOnClickListener(this);
-        findViewById(R.id.cancelBtn).setOnClickListener(this);
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            /*case R.id.createBtn:
-                break;*/
-            case R.id.cancelBtn:
-                startActivity(new Intent(DeleteServiceFromProfile.this, ClinicServicesScreen.class));
-                break;
-        }}
-}
->>>>>>> 7a266d21eb005d9047adce7a7b1c1cac5da322c2

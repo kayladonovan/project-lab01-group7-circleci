@@ -10,7 +10,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< HEAD
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -31,15 +30,6 @@ public class AddServiceToProfile extends AppCompatActivity implements View.OnCli
     //private FirebaseAuth.AuthStateListener myAuthListener;
     private DatabaseReference myRef;
     EditText AddService;
-=======
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
-import com.google.firebase.auth.FirebaseAuth;
-
-public class AddServiceToProfile extends AppCompatActivity implements View.OnClickListener{
->>>>>>> 7a266d21eb005d9047adce7a7b1c1cac5da322c2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,26 +38,12 @@ public class AddServiceToProfile extends AppCompatActivity implements View.OnCli
 
         findViewById(R.id.createBtn).setOnClickListener(this);
         findViewById(R.id.cancelBtn).setOnClickListener(this);
-<<<<<<< HEAD
         AddService = (EditText) findViewById(R.id.serviceName);
 
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         myRef = FirebaseDatabase.getInstance().getReference();
-=======
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            /*case R.id.createBtn:
-                break;*/
-            case R.id.cancelBtn:
-                startActivity(new Intent(AddServiceToProfile.this, ClinicServicesScreen.class));
-                break;
-        }
->>>>>>> 7a266d21eb005d9047adce7a7b1c1cac5da322c2
     }
 
     protected void addToProfile(){
