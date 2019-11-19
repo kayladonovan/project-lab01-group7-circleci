@@ -32,7 +32,10 @@ public class ClinicServicesScreen extends AppCompatActivity implements View.OnCl
         ClinicNameTextView = (TextView)findViewById(R.id.clinicName);
         findViewById(R.id.addBtn).setOnClickListener(this);
         findViewById(R.id.deleteBtn).setOnClickListener(this);
+<<<<<<< HEAD
         //findViewById(R.id.removeUser).setOnClickListener(this);
+=======
+>>>>>>> 7a266d21eb005d9047adce7a7b1c1cac5da322c2
         findViewById(R.id.clinicHoursBtn).setOnClickListener(this);
         findViewById(R.id.employeeHours).setOnClickListener(this);
         findViewById(R.id.logout).setOnClickListener(this);

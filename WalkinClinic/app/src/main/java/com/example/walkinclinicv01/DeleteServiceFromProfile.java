@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+<<<<<<< HEAD
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -24,11 +25,16 @@ public class DeleteServiceFromProfile extends AppCompatActivity implements OnCli
     private FirebaseUser mUser;
     private FirebaseAuth mAuth;
     EditText deleteService;
+=======
+
+public class DeleteServiceFromProfile extends AppCompatActivity implements View.OnClickListener{
+>>>>>>> 7a266d21eb005d9047adce7a7b1c1cac5da322c2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_service_from_profile);
+<<<<<<< HEAD
         deleteService = (EditText) findViewById(R.id.serviceName);
 
         findViewById(R.id.deleteBtn).setOnClickListener(this);
@@ -82,3 +88,21 @@ public class DeleteServiceFromProfile extends AppCompatActivity implements OnCli
     }
 
 }
+=======
+
+        findViewById(R.id.deleteBtn).setOnClickListener(this);
+        findViewById(R.id.cancelBtn).setOnClickListener(this);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            /*case R.id.createBtn:
+                break;*/
+            case R.id.cancelBtn:
+                startActivity(new Intent(DeleteServiceFromProfile.this, ClinicServicesScreen.class));
+                break;
+        }}
+}
+>>>>>>> 7a266d21eb005d9047adce7a7b1c1cac5da322c2
