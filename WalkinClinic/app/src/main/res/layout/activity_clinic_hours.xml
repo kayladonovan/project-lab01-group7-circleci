@@ -221,7 +221,7 @@
 
 
             <EditText
-                android:id="@+id/endTim4"
+                android:id="@+id/endTime4"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"

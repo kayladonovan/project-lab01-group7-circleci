@@ -32,7 +32,7 @@ public class ClinicServicesScreen extends AppCompatActivity implements View.OnCl
         ClinicNameTextView = (TextView)findViewById(R.id.clinicName);
         findViewById(R.id.addBtn).setOnClickListener(this);
         findViewById(R.id.deleteBtn).setOnClickListener(this);
-        findViewById(R.id.removeUser).setOnClickListener(this);
+        //findViewById(R.id.removeUser).setOnClickListener(this);
         findViewById(R.id.clinicHoursBtn).setOnClickListener(this);
         findViewById(R.id.employeeHours).setOnClickListener(this);
         findViewById(R.id.logout).setOnClickListener(this);
@@ -55,6 +55,7 @@ public class ClinicServicesScreen extends AppCompatActivity implements View.OnCl
 
             }
         });
+
     }
 
     @Override
