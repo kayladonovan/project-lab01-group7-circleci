@@ -27,7 +27,6 @@ public class AddServiceToProfile extends AppCompatActivity implements View.OnCli
 
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
-    //private FirebaseAuth.AuthStateListener myAuthListener;
     private DatabaseReference myRef;
     EditText AddService;
 
@@ -52,11 +51,13 @@ public class AddServiceToProfile extends AppCompatActivity implements View.OnCli
         String userID = mUser.getUid();
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.child("Services").hasChild(clinicService)){
-                    //String role = myRef.child("Services").child(clinicService).;
-                    myRef.child("Clinics").child(userID).child("Services Offered").child(clinicService).setValue("");
+
+                    String role = snapshot.child("Services").child(clinicService).child("roleName").getValue(String.class);
+                    myRef.child("Clinics").child(userID).child("Services Offered").child(clinicService).setValue(role);
                     Toast.makeText(AddServiceToProfile.this, "Service added to Clinic", Toast.LENGTH_LONG).show();
                     AddService.setText("");
                     startActivity(new Intent(AddServiceToProfile.this,ClinicServicesScreen.class));
@@ -64,6 +65,7 @@ public class AddServiceToProfile extends AppCompatActivity implements View.OnCli
 
                 else{
 
+                    //if service does not exist
                     Toast.makeText(AddServiceToProfile.this, "Service cannot be added as it does not exist", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(AddServiceToProfile.this,AddServiceToProfile.class));
                 }
