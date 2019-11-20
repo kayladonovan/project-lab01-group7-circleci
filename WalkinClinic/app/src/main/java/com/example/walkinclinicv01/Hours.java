@@ -8,6 +8,7 @@ public class Hours {
         this.open=open;
         this.closed=closed;
     }
+    public Hours(){}
 
     public String getOpen(){
         return open;

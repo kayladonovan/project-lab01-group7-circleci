@@ -1,14 +1,14 @@
 package com.example.walkinclinicv01;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,6 +20,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
 
+@RequiresApi(api = Build.VERSION_CODES.O)
 public class ClinicHours extends AppCompatActivity implements View.OnClickListener{
 
 
@@ -170,6 +171,7 @@ public class ClinicHours extends AppCompatActivity implements View.OnClickListen
         switch(v.getId()){
             case R.id.setBtn:
                 addHours();
+                //startActivity(new Intent(ClinicHours.this, ClinicServicesScreen.class));
                break;
 
             case R.id.cancelBtn4:

@@ -2,7 +2,8 @@ package com.example.walkinclinicv01;
 
 public class WeeklySchedule {
     Hours mon, tue, wed, thur, fri, sat, sun;
-    public WeeklySchedule(Hours mon, Hours tue, Hours wed, Hours thur, Hours fri, Hours sat, Hours sun){
+
+    public WeeklySchedule (Hours mon, Hours tue, Hours wed, Hours thur, Hours fri, Hours sat, Hours sun){
         this.mon = mon;
         this.tue = tue;
         this.wed = wed;
@@ -12,11 +13,14 @@ public class WeeklySchedule {
         this.sun = sun;
     }
 
+    public WeeklySchedule (){ }
+
+
     public Hours getMon(){
         return mon;
     }
 
-    public Hours getTue(){
+    public Hours getTue (){
         return tue;
     }
 
