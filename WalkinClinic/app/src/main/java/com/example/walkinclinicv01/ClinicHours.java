@@ -80,8 +80,16 @@ public class ClinicHours extends AppCompatActivity implements View.OnClickListen
             mAuth = FirebaseAuth.getInstance();
             mUser = mAuth.getCurrentUser();
             myRef = FirebaseDatabase.getInstance().getReference();
-            myRef.child("Clinics").child(mUser.getUid()).child("Hours").setValue(workHours);
-            Toast.makeText(this, "Hours added", Toast.LENGTH_LONG).show();
+            myRef.child("Clinics").child(mUser.getUid()).child("Hours").setValue(workHours).addOnCompleteListener(this,
+                    task -> {
+                            if(task.isSuccessful()){
+                                Toast.makeText(this, "Hours added", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(ClinicHours.this,ClinicServicesScreen.class));
+                            } else{
+                                Toast.makeText(this, "Error: Hours not added", Toast.LENGTH_LONG).show();
+                            }
+                    });
+
         }
     }
 
