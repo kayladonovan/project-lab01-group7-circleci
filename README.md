@@ -64,36 +64,23 @@ The UML diagram for our system can be found in the folder UML. Within the direct
 
 ![employee]()
 
-#### After clicking the 'Add Service' button brings you to the AddService screen which looks like:
+#### After clicking the 'Add Service' button brings you to the AddServiceToProfile screen which looks like:
 
-![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/addServiceScreen.png)
+![add]()
 
-- A successful creation of a service in the DB looks like:
-![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/dbUpdate1.png)
-
-
-#### After clicking the 'Edit Service' button brings you to the EditService screen which looks like:
-
-![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/editServiceScreen.png)
-
-- A successful edit of a service in the app looks like:
-![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/editServiceConfirmation.png)
+- A successful addition of a service in a clinic in the DB looks like:
+![add]()
 
 
-#### After clicking the 'Delete Service' button brings you to the DeleteService screen which looks like:
+#### After clicking the 'Delete Service' button brings you to the DeleteServiceFromProfile screen which looks like:
 
-![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/deleteServiceScreen.png)
+![delete]()
 
-- After removing the DB looks like:
-![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/dbUpdate3.PNG)
-
-
-#### After clicking the 'Remove Account' button brings you to the RemoveService screen which looks like:
-
-![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/removeUserScreen.png)
+- After removing the service from the clinic the DB looks like:
+![remove]()
 
 
-#### After clicking the 'Set Clinic Hours' button brings you to the ClinicHours screen which looks like:
+#### After clicking the '(Re)Assign Clinic Hours' button brings you to the ClinicHours screen which looks like:
 
 ![hours]()
 
