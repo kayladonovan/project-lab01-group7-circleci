@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 
 public class DeleteServiceFromProfileTest {
 
@@ -27,8 +29,16 @@ public class DeleteServiceFromProfileTest {
     @UiThreadTest
     public void deleteService(){
 
+
+
         serviceToDelete=myActivity.findViewById(R.id.serviceName);
         serviceToDelete.setText("Heal");
+
+        String check=serviceToDelete.getText().toString();
+
+
+
+        /*
 
         myActivity.runOnUiThread(new Runnable() {
 
@@ -40,6 +50,10 @@ public class DeleteServiceFromProfileTest {
 
             }
         });
+
+        */
+        assertEquals("Heal",check);
+
 
 
 

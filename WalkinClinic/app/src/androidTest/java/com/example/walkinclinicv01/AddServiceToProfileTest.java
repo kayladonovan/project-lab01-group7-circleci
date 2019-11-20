@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class AddServiceToProfileTest {
     @Rule
     public ActivityTestRule<AddServiceToProfile> myActivityTestRule= new ActivityTestRule<AddServiceToProfile>(AddServiceToProfile.class);
@@ -30,6 +32,10 @@ public class AddServiceToProfileTest {
         serviceName=myActivity.findViewById(R.id.serviceName);
         serviceName.setText("Heal");
 
+        String check=serviceName.getText().toString();
+
+        /*
+
         myActivity.runOnUiThread(new Runnable() {
 
             @Override
@@ -40,6 +46,10 @@ public class AddServiceToProfileTest {
 
             }
         });
+
+         */
+
+        assertEquals("Heal",check);
 
     }
 

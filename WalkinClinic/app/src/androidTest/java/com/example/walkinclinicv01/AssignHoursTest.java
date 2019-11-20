@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 
 public class AssignHoursTest {
 
@@ -68,6 +70,33 @@ public class AssignHoursTest {
         SundayFrom.setText("09:00");
         SundayUntil.setText("17:00");
 
+
+        String check=MondayFrom.getText().toString();
+        String check2=MondayUntil.getText().toString();
+
+        String check3=TuesdayFrom.getText().toString();
+        String check4=TuesdayUntil.getText().toString();
+
+        String check5=WednesdayFrom.getText().toString();
+        String check6=WednesdayUntil.getText().toString();
+
+        String check7=ThursdayFrom.getText().toString();
+        String check8=ThursdayUntil.getText().toString();
+
+        String check9=FridayFrom.getText().toString();
+        String check10=FridayUntil.getText().toString();
+
+        String check11=SaturdayFrom.getText().toString();
+        String check12=SaturdayUntil.getText().toString();
+
+        String check13=SundayFrom.getText().toString();
+        String check14=SundayUntil.getText().toString();
+
+
+        /*
+
+
+
         myActivity.runOnUiThread(new Runnable() {
 
             @Override
@@ -78,6 +107,28 @@ public class AssignHoursTest {
 
             }
         });
+        */
+
+        assertEquals("09:00",check);
+        assertEquals("17:00",check2);
+
+        assertEquals("09:00",check3);
+        assertEquals("17:00",check4);
+
+        assertEquals("09:00",check5);
+        assertEquals("17:00",check6);
+
+        assertEquals("09:00",check7);
+        assertEquals("17:00",check8);
+
+        assertEquals("09:00",check9);
+        assertEquals("17:00",check10);
+
+        assertEquals("09:00",check11);
+        assertEquals("17:00",check12);
+
+        assertEquals("09:00",check13);
+        assertEquals("17:00",check14);
 
 
 

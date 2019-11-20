@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 
 public class CreateClinincTest {
 
@@ -36,6 +38,14 @@ public class CreateClinincTest {
         Address.setText("Ottawa");
         phonenumber.setText("6132348");
 
+
+        String check=clinicName.getText().toString();
+        String check2=Address.getText().toString();
+        String check3=phonenumber.getText().toString();
+
+        /*
+
+
         myActivity.runOnUiThread(new Runnable() {
 
             @Override
@@ -46,6 +56,12 @@ public class CreateClinincTest {
 
             }
         });
+
+        */
+
+        assertEquals("Med Clinic",check);
+        assertEquals("Ottawa",check2);
+        assertEquals("6132348",check3);
 
 
     }
