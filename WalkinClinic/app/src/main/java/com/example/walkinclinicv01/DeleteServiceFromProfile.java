@@ -33,41 +33,38 @@ public class DeleteServiceFromProfile extends AppCompatActivity implements OnCli
 
         findViewById(R.id.deleteBtn).setOnClickListener(this);
         findViewById(R.id.cancelBtn).setOnClickListener(this);
-
-        mRef = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+
     }
 
     protected void deleteFromProfile(){
 
-        String clinicService = deleteService.getText().toString().trim();
+        String clinic = deleteService.getText().toString().trim();
+        mRef = FirebaseDatabase.getInstance().getReference();
         String userID = mUser.getUid();
 
-        mRef.addValueEventListener(new ValueEventListener() {
+       mRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                if ((dataSnapshot.child("Clinics").child(userID).child("Services Offered").hasChild(clinicService))) {
+                if ((dataSnapshot.child("Clinics").child(userID).child("Services Offered").hasChild(clinic))) {
 
-                    mRef.child("Clinics").child(userID).child("Services Offered").child(clinicService).setValue(null);
+                    mRef.child("Clinics").child(userID).child("Services Offered").child(clinic).setValue(null);
+                    Toast.makeText(DeleteServiceFromProfile.this, "Service deleted from clinic", Toast.LENGTH_LONG).show();
                     deleteService.setText("");
                     startActivity(new Intent(DeleteServiceFromProfile.this, ClinicServicesScreen.class));
-                    Toast.makeText(DeleteServiceFromProfile.this, "Service deleted from clinic", Toast.LENGTH_LONG).show();
 
-                } else {
-                    Toast.makeText(DeleteServiceFromProfile.this, "Invalid Entry, service cannot be deleted", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(DeleteServiceFromProfile.this, DeleteServiceFromProfile.class));
-                }
-            }
+                } else{
+
+               Toast.makeText(DeleteServiceFromProfile.this, "Invalid Entry, service cannot be deleted", Toast.LENGTH_LONG).show();
+               startActivity(new Intent(DeleteServiceFromProfile.this, DeleteServiceFromProfile.class));
+           }}
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
+            public void onCancelled(@NonNull DatabaseError databaseError) {}
+        }); }
 
     @Override
     public void onClick(View v) {

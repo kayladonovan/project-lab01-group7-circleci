@@ -51,12 +51,12 @@ public class AddServiceToProfile extends AppCompatActivity implements View.OnCli
         String clinicService = AddService.getText().toString().trim();
         String userID = mUser.getUid();
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.child("Services").hasChild(clinicService)){
                     //String role = myRef.child("Services").child(clinicService).;
-                    myRef.child("Clinics").child(userID).child("Services Offered").child(clinicService).setValue("Role");
+                    myRef.child("Clinics").child(userID).child("Services Offered").child(clinicService).setValue("");
                     Toast.makeText(AddServiceToProfile.this, "Service added to Clinic", Toast.LENGTH_LONG).show();
                     AddService.setText("");
                     startActivity(new Intent(AddServiceToProfile.this,ClinicServicesScreen.class));
