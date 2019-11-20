@@ -41,7 +41,7 @@
                 android:id="@+id/addBtn"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
-                android:layout_height="70dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:onClick="onClick"
@@ -56,7 +56,7 @@
                 android:id="@+id/deleteBtn"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
-                android:layout_height="70dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:text="remove service" />
 
@@ -79,7 +79,7 @@
                 android:id="@+id/clinicHoursBtn"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
-                android:layout_height="70dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:text="(Re)Assign Weekly clinic hours" />
 
@@ -91,7 +91,7 @@
                 android:id="@+id/employeeHours"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
-                android:layout_height="70dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:text="view clinic hours " />
         </LinearLayout>
