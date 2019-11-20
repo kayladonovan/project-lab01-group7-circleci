@@ -1,42 +1,36 @@
-# Walkin Clinic DELIVERABLE 2
+# Walkin Clinic DELIVERABLE 3
 
-This is our implementation of deliverable 2 of the Walkin Clinic app.
+This is our implementation of deliverable 3 of the Walkin Clinic app.
 
 ## Team Members
 | Name | Student Number | Tasks | 
 | --- | --- | --- |
-| Kayla Donovan | 300057156 | displays |
-| Mahnam Nauman | 8281780 | UML diagram | 
-| Yutaro Miyata | 8912340 | add service |
-| Minh Ta Anh | 300078762 | admin class methods and authentication and create testing methods|
+| Kayla Donovan | 300057156 | displays, UML diagram |
+| Mahnam Nauman | 8281780 | add service to clinic, remove service from clinic | 
+| Yutaro Miyata | 8912340 | creating clinic, checking if employee has a clinic |
+| Minh Ta Anh | 300078762 | assign/edit hours |
 | Prashanth Sivoththaman | 8693247 | test classes |
-| Mohannad Shaheen | 8571137 | edit, delete service |
+| Mohannad Shaheen | 8571137 | view hours |
 
 ### DIRECTORIES
-- Java files for the classes added, specifically the AdminScreen (successful Admin login screen), AddService, DeleteService, EditService, and RemoveAccount
+- Java files for the classes added, specifically the Clinic, Hours, WEeklySchedule, Info, ProfileInformation, EmployeeScreen, ClinicServicesScreen, AddServiceToProfile, DeleteServiceFromProfile, ClinicHours, and ListOfHours
 can all be found within the directory:
 	
-    WalkinClinic > app > src > main > java > com > example > walkinClinicv01
-
-    https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable02/WalkinClinic/app/src/main/java/com/example/walkinclinicv01
+    https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable03/WalkinClinic/app/src/main/java/com/example/walkinclinicv01
 
     We did not implement seperate class files for each type of user, instead, this was accomplished by storing each user's attributes 
     within our database.
     (To be specific, their role*, first and last names, and email were stored). 
 
-- XML files for the newly added activities acivity_add_service, activity_delete_service, activity_edit_service, activity_remove_account and activity_admin_screen can be found in the directory:
+- XML files for the newly added activities acivity_clinic_services_screen, activity_profile_information, activity_clinic_hours, activity_list_of_hours, activity_add_clinic_to_profile, delete_clinic_from_profile and activity_employee_screen can be found in the directory:
 	
-    WalkinClinic > app > src > main > res > layout
-
-    https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable02/WalkinClinic/app/src/main/res/layout
+    https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable03/WalkinClinic/app/src/main/res/layout
 
 - Test files relevant to the features of deliverable 1 and 2 can be found in the directory: 
 	
-    WalkinClinic > app > src > androidTest > java > com > example > walkinClinicv01
+    https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable03/WalkinClinic/app/src/androidTest/java/com/example/walkinclinicv01 
 
-    https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable02/WalkinClinic/app/src/androidTest/java/com/example/walkinclinicv01 
-
-	Test classes of successfull logins of Admin, Patients and Employees were implemented. Further, tests for expected failed logins were also created. 
+	Test classes of sucessfully creating a clinic, adding and removing services to a clinic, assigning hours to the clinic, and viewing clinic (employee) hours were implemented.
 	Note JUnit tests were used. 
 	
 ### DATABASE
@@ -58,52 +52,52 @@ The UML diagram for our system can be found in the folder UML. Within the direct
 
 ### RUNTIME SCREENSHOTS
 
-#### The login screen for admin looks like:
+#### The login screen for an employee looks like:
 
-![login](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/adminLogin.png)
+![login]()
 
-#### The welcome screen for admin looks like:
+#### The welcome screen for an employee looks like:
 
-scroll view, part 1/2
-![welcome](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/scrollViewAdminScreen1.png)
+![welcome]()
 
-scroll view, part 1/2
-![welcome](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/scrollViewAdminScreen2.png)
+- A successful creation of an employee in the DB looks like:
+
+![employee]()
 
 #### After clicking the 'Add Service' button brings you to the AddService screen which looks like:
 
-![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/addServiceScreen.png)
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/addServiceScreen.png)
 
-- A successful creation of a service in the app looks like:
-![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/successfulAddServiceScreen.png)
- 
 - A successful creation of a service in the DB looks like:
-![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/dbUpdate1.png)
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/dbUpdate1.png)
+
 
 #### After clicking the 'Edit Service' button brings you to the EditService screen which looks like:
 
-![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/editServiceScreen.png)
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/editServiceScreen.png)
 
 - A successful edit of a service in the app looks like:
-![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/editServiceConfirmation.png)
+![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/editServiceConfirmation.png)
 
-- A successful edit of a service in the DB looks like:
-![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/dbUpdate2.png)
-
-- An unsuccessful edit of a service in the app looks like:
-![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/invalidEntry1.png)
-![edit](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/invalidEntry2.png)
 
 #### After clicking the 'Delete Service' button brings you to the DeleteService screen which looks like:
 
-![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/deleteServiceScreen.png)
+![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/deleteServiceScreen.png)
 
 - After removing the DB looks like:
-![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/dbUpdate3.PNG)
+![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/dbUpdate3.PNG)
 
-- An unsuccessful removal of a service in the app looks like:
-![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/unsuccessfulDeleteServiceScreen.png)
 
 #### After clicking the 'Remove Account' button brings you to the RemoveService screen which looks like:
-![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable02/screenshots/removeUserScreen.png)
 
+![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/removeUserScreen.png)
+
+
+#### After clicking the 'Set Clinic Hours' button brings you to the ClinicHours screen which looks like:
+
+![hours]()
+
+
+#### After clicking the 'View Clinic Hours' button brings you to the ListOfHours screen which looks like:
+
+![list]()
