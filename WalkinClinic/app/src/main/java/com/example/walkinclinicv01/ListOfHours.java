@@ -67,13 +67,13 @@ public class ListOfHours extends AppCompatActivity {
                 openTime6.setText(sat.getOpen());
                 openTime7.setText(sun.getOpen());
 
-                closeTime1.setText(mon.getClose());
-                closeTime2.setText(tue.getClose());
-                closeTime3.setText(wed.getClose());
-                closeTime4.setText(thur.getClose());
-                closeTime5.setText(fri.getClose());
-                closeTime6.setText(sat.getClose());
-                closeTime7.setText(sun.getClose());
+                closeTime1.setText(mon.getClosed());
+                closeTime2.setText(tue.getClosed());
+                closeTime3.setText(wed.getClosed());
+                closeTime4.setText(thur.getClosed());
+                closeTime5.setText(fri.getClosed());
+                closeTime6.setText(sat.getClosed());
+                closeTime7.setText(sun.getClosed());
 
                 //roleTextView.setText(person.getRole());
             }
