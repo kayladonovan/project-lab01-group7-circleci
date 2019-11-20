@@ -23,6 +23,7 @@ public class CreateClinincTest {
         myActivity = myActivityTestRule.getActivity();
     }
 
+
     @Test
     @UiThreadTest
     public void CreateClinic(){
