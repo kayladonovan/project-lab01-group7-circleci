@@ -85,7 +85,7 @@
                     android:layout_width="154dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="delete" />
+                    android:text="remove service" />
 
                 <Space
                     android:layout_width="match_parent"
