@@ -3,7 +3,6 @@ package com.example.walkinclinicv01;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,24 +16,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+public class EmployeeScreen extends AppCompatActivity implements View.OnClickListener {
 
-public class WelcomeWindow extends AppCompatActivity {
+    //Added to display employee name on EmployeeScreen (same as in WelcomeWindow)
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     DatabaseReference mDatabase;
-
     TextView firstNameTextView;
-    //TextView roleTextView;
-
-    Button userSignOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome_window);
-
+        setContentView(R.layout.activity_employee_screen);
+        findViewById(R.id.createClinicBtn).setOnClickListener(this);
+        findViewById(R.id.signOut2).setOnClickListener(this);
         firstNameTextView = (TextView) findViewById(R.id.textFirstName);
-        //roleTextView = (TextView) findViewById(R.id.textRole);
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
@@ -44,9 +40,7 @@ public class WelcomeWindow extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Person person = dataSnapshot.getValue(Person.class);
-
                 firstNameTextView.setText(person.getFirstName());
-                //roleTextView.setText(person.getRole());
             }
 
             @Override
@@ -54,18 +48,19 @@ public class WelcomeWindow extends AppCompatActivity {
 
             }
         });
-
-        userSignOut = findViewById(R.id.SignOut);
-
-        userSignOut.setOnClickListener(new View.OnClickListener(){
-                                           @Override
-                                           public void onClick(View view){
-                                               FirebaseAuth.getInstance().signOut();
-                                               startActivity(new Intent(WelcomeWindow.this, MainActivity.class));
-                                           }
-                                       }
-        );
-
     }
 
+    @Override
+    public void onClick(View v){
+        switch(v.getId()){
+            case R.id.createClinicBtn:
+                startActivity(new Intent(EmployeeScreen.this,ProfileInformation.class));
+                break;
+
+            case R.id.signOut2:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(EmployeeScreen.this,MainActivity.class));
+                break;
+        }
+    }
 }

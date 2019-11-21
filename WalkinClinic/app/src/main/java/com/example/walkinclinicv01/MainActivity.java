@@ -13,6 +13,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -20,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //private Button registerButton
     EditText UserName, Password;
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference myRef;
+    private FirebaseUser mUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +67,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (task.isSuccessful()) {
                         if (UserName.getText().toString().equals("qwe@gmail.com") && Password.getText().toString().equals("123456")) {
                             startActivity(new Intent(MainActivity.this, AdminScreen.class));
-                        } else
-                            startActivity(new Intent(MainActivity.this, WelcomeWindow.class));
+                        } else    //Check if User Signed in is an Employee or Patient
+                            myRef = FirebaseDatabase.getInstance().getReference();
+                            mUser = firebaseAuth.getCurrentUser();
+
+                            myRef.child("users").child(mUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    Person person = dataSnapshot.getValue(Person.class);
+
+                                    if(person.getRole().equals("Employee")|| person.getRole().equals("employee")){       //Person is an employee
+
+                                        myRef.child("Clinics").addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                if(dataSnapshot.hasChild(mUser.getUid())){
+                                                    startActivity(new Intent(MainActivity.this,ClinicServicesScreen.class));
+                                                }else{
+                                                    startActivity(new Intent(MainActivity.this,EmployeeScreen.class));
+                                                }
+                                                //for (DataSnapshot ds: dataSnapshot.getChildren()){
+                                                    //Clinic clinic = ds.getValue(Clinic.class);
+                                                    //if(ds.getValue(Clinic.class).getUSERID().equals(mUser.getUid())){
+                                                        //startActivity(new Intent(MainActivity.this,ClinicServicesScreen.class));
+                                                    //}
+                                                    //if(ds.hasChild(mUser.getUid())){
+                                                        //startActivity(new Intent(MainActivity.this,ClinicServicesScreen.class));
+                                                    //}
+                                                //}
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        //startActivity(new Intent(MainActivity.this,EmployeeScreen.class));
+                                    }
+                                    else{
+                                        startActivity(new Intent(MainActivity.this, WelcomeWindow.class));
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            //startActivity(new Intent(MainActivity.this, WelcomeWindow.class));
                     } else {
                         Toast.makeText(MainActivity.this, "Invalid Entry", Toast.LENGTH_LONG).show();
                     }
