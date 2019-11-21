@@ -26,7 +26,7 @@ can all be found within the directory:
 	
     https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable03/WalkinClinic/app/src/main/res/layout
 
-- Test files relevant to the features of deliverable 1 and 2 can be found in the directory: 
+- Test files relevant to the features of deliverable 3 can be found in the directory: 
 	
     https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable03/WalkinClinic/app/src/androidTest/java/com/example/walkinclinicv01 
 
