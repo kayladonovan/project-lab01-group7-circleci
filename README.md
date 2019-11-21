@@ -52,39 +52,63 @@ The UML diagram for our system can be found in the folder UML. Within the direct
 
 ### RUNTIME SCREENSHOTS
 
-#### The login screen for an employee looks like:
+#### The registration screen for a new employee looks like:
 
-![login]()
+![register](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/regAsEmployee.png)
+
 
 #### The welcome screen for an employee looks like:
 
-![welcome]()
+![welcome](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/employeeScreen.png)
 
-- A successful creation of an employee in the DB looks like:
 
-![employee]()
+#### After clicking 'Create Clinic' the employee is then prompted to create their clinic: 
+
+![create](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/createClinic.png)
+
+- A successful creation of a clinic in the DB looks like:
+
+![employee](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/db1.PNG)
+
+
+#### After a successful creation of a clinic, the employee is directed to the Clinic Services Screen:
+
+![services](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/clinicServicesScreen.png)
 
 #### After clicking the 'Add Service' button brings you to the AddServiceToProfile screen which looks like:
 
-![add]()
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/addSuccessful.png)
+
+- If the service name that was entered does not exist:
+
+![invalid](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/addFail.png)
 
 - A successful addition of a service in a clinic in the DB looks like:
-![add]()
-
+![add](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/db2.PNG)
 
 #### After clicking the 'Delete Service' button brings you to the DeleteServiceFromProfile screen which looks like:
 
-![delete]()
+![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/deleteSuccessful.png)
 
 - After removing the service from the clinic the DB looks like:
-![remove]()
+![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/db1.PNG)
 
 
 #### After clicking the '(Re)Assign Clinic Hours' button brings you to the ClinicHours screen which looks like:
 
-![hours]()
+![hours](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/assignHours.png)
+
+- Invalid entries of the time slots will appear as:
+![invalid](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/reassignHours.png)
+![invalid](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/invalidHours1.png)
+
+- A successful assigning of the clinic's hours in the DB looks like:
+![hours](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/db3.PNG)
+
+- A successful (re)assigning of the clinic's hours in the DB looks like:
+![hours](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/db4.PNG)
 
 
 #### After clicking the 'View Clinic Hours' button brings you to the ListOfHours screen which looks like:
 
-![list]()
+![list](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/viewEditedHours.png)
