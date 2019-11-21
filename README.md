@@ -99,7 +99,7 @@ The UML diagram for our system can be found in the folder UML. Within the direct
 ![hours](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/assignHours.png)
 
 - Invalid entries of the time slots will appear as:
-![invalid](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/reassignHours.png)
+![invalid](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/invalidHours2.png)
 ![invalid](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/invalidHours1.png)
 
 - A successful assigning of the clinic's hours in the DB looks like:
