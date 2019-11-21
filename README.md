@@ -88,7 +88,7 @@ The UML diagram for our system can be found in the folder UML. Within the direct
 
 #### After clicking the 'Delete Service' button brings you to the DeleteServiceFromProfile screen which looks like:
 
-![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/deleteSuccessful.png)
+![delete](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/delSuccessful.png)
 
 - After removing the service from the clinic the DB looks like:
 ![remove](https://github.com/professor-forward/project-lab01-group7/blob/f/deliverable03/screenshots/db1.PNG)
