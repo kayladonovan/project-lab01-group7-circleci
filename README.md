@@ -13,7 +13,7 @@ This is our implementation of deliverable 3 of the Walkin Clinic app.
 | Mohannad Shaheen | 8571137 | view hours |
 
 ### DIRECTORIES
-- Java files for the classes added, specifically the Clinic, Hours, WEeklySchedule, Info, ProfileInformation, EmployeeScreen, ClinicServicesScreen, AddServiceToProfile, DeleteServiceFromProfile, ClinicHours, and ListOfHours
+- Java files for the classes added, specifically the Clinic, Hours, WeeklySchedule, Info, ProfileInformation, EmployeeScreen, ClinicServicesScreen, AddServiceToProfile, DeleteServiceFromProfile, ClinicHours, and ListOfHours
 can all be found within the directory:
 	
     https://github.com/professor-forward/project-lab01-group7/tree/f/deliverable03/WalkinClinic/app/src/main/java/com/example/walkinclinicv01
