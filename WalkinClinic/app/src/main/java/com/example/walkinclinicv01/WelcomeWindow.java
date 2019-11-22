@@ -3,7 +3,6 @@ package com.example.walkinclinicv01;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class WelcomeWindow extends AppCompatActivity {
+public class WelcomeWindow extends AppCompatActivity implements View.OnClickListener{
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     DatabaseReference mDatabase;
@@ -26,12 +25,11 @@ public class WelcomeWindow extends AppCompatActivity {
     TextView firstNameTextView;
     //TextView roleTextView;
 
-    Button userSignOut;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_window);
+        findViewById(R.id.SignOut).setOnClickListener(this);
 
         firstNameTextView = (TextView) findViewById(R.id.textFirstName);
         //roleTextView = (TextView) findViewById(R.id.textRole);
@@ -55,17 +53,22 @@ public class WelcomeWindow extends AppCompatActivity {
             }
         });
 
-        userSignOut = findViewById(R.id.SignOut);
+    }
 
-        userSignOut.setOnClickListener(new View.OnClickListener(){
-                                           @Override
-                                           public void onClick(View view){
-                                               FirebaseAuth.getInstance().signOut();
-                                               startActivity(new Intent(WelcomeWindow.this, MainActivity.class));
-                                           }
-                                       }
-        );
 
+    //Adapted to allow for patient functionality
+    @Override
+    public void onClick(View v){
+        switch(v.getId()){
+            case R.id.searchBtn:
+                startActivity(new Intent(WelcomeWindow.this,ClinicSearch.class));
+                break;
+
+            case R.id.signOut2:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(WelcomeWindow.this,MainActivity.class));
+                break;
+        }
     }
 
 }

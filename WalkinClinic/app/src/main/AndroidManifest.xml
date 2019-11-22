@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DeleteServiceFromProfile"></activity>
+        <activity android:name=".SearchByProvidedServices"></activity>
+        <activity android:name=".SearchByHours" />
+        <activity android:name=".SearchByAddress" />
+        <activity android:name=".ListOfClinics" />
+        <activity android:name=".Rating" />
+        <activity android:name=".ClinicSearch" />
+        <activity android:name=".PatientClinic" />
+        <activity android:name=".DeleteServiceFromProfile" />
         <activity android:name=".AddServiceToProfile" />
         <activity android:name=".ListOfHours" />
         <activity android:name=".ClinicHours" />
@@ -26,6 +33,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
