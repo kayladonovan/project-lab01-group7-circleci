@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class ListOfClinics extends AppCompatActivity {
-/*
+
     LinearLayout linearLayout;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
@@ -26,12 +26,12 @@ public class ListOfClinics extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_clinics);
 
-        linearLayout = findViewById(R.id.linearLayout);
+        //linearLayout = findViewById(R.id.linearLayout);
 
-        addTextViews();
+        //addTextViews();
     }
 
-
+/*
     public void numOfClinics(){
 
         childRef.addListenerForSingleValueEvent(new ValueEventListener() {
