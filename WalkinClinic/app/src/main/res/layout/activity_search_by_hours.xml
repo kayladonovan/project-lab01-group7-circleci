@@ -16,7 +16,23 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/searchScreenTitle3"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Narrow your results by entering a preferred set of working hours"
+            android:textAllCaps="false"
+            android:textColor="#E21F83B1"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
 
         <EditText
             android:id="@+id/searchStartHours"
@@ -59,5 +75,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="search" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <Button
+            android:id="@+id/cancelBtn6"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@android:string/cancel"
+            android:textAllCaps="false"
+            android:textSize="14sp" />
     </LinearLayout>
 </ScrollView>
