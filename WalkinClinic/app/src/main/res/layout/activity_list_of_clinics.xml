@@ -9,10 +9,9 @@
     tools:context=".ListOfClinics">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <Space
             android:layout_width="match_parent"
@@ -27,7 +26,17 @@
             android:textAllCaps="true"
             android:textColor="#E21F83B1"
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:orientation="vertical"></LinearLayout>
 
     </LinearLayout>
 </ScrollView>

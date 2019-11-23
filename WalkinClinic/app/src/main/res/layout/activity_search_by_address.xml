@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Narrow your results by entering an address convientient to you"
+            android:text="Narrow your results by entering an address convenient to you"
             android:textAllCaps="false"
             android:textColor="#E21F83B1"
             android:textSize="20sp"
