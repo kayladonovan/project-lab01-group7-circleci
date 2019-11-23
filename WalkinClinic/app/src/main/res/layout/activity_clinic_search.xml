@@ -15,7 +15,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="70dp" />
+            android:layout_height="40dp" />
 
         <TextView
             android:id="@+id/searchScreenTitle"
@@ -30,84 +30,97 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="35dp" />
 
         <TextView
             android:id="@+id/notice6"
-            android:layout_width="270dp"
-            android:layout_height="60dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Search for a walk-in clinic by address, working hours and/or types of services provided."
+            android:text="To view your options as a patient, begin finding a clinic. You can search directly for a walk-in clinic by name."
             android:textSize="12sp" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
-        <Button
-            android:id="@+id/searchAddressBtn"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="onClick"
-            android:text="search by address" />
-
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/searchHoursBtn"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="onClick"
-            android:text="search by working hours" />
+            <EditText
+                android:id="@+id/searchClinic"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:hint="Enter Clinic Name"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:selectAllOnFocus="true"
+                android:textSize="14sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <Button
-            android:id="@+id/searchServiceBtn"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="onClick"
-            android:text="Search by provided services" />
+            <Button
+                android:id="@+id/searchDirectlyBtn"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onClick"
+                android:text="@android:string/search_go"
+                android:textSize="12sp" />
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
-        <EditText
-            android:id="@+id/searchClinic"
-            android:layout_width="270dp"
+        <TextView
+            android:id="@+id/notice7"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="left"
-            android:hint="Or,search for a Clinic by name directly:"
-            android:imeOptions="actionDone"
-            android:inputType="text"
-            android:selectAllOnFocus="true"
-            android:textSize="14sp" />
+            android:gravity="center"
+            android:text="Don't know the name of the clinic? Search by selecting one of the options below."
+            android:textSize="12sp" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
+
         <Button
-            android:id="@+id/searchDirectlyBtn"
+            android:id="@+id/searchAddressBtn"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:onClick="onClick"
-            android:text="Search Clinic" />
+            android:text="by address"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/searchServiceBtn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:onClick="onClick"
+            android:text="by provided services"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/searchHoursBtn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:onClick="onClick"
+            android:text="by working hours"
+            android:textSize="12sp" />
 
         <Space
             android:layout_width="match_parent"
