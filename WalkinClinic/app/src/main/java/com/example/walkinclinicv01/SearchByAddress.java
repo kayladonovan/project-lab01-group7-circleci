@@ -34,6 +34,7 @@ public class SearchByAddress extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_search_by_address);
         findViewById(R.id.cancelBtn7).setOnClickListener(this);
         findViewById(R.id.searchBtn).setOnClickListener(this);
+        search = (EditText) findViewById(R.id.searchAddress);
     }
 
     //NEW
@@ -72,7 +73,7 @@ public class SearchByAddress extends AppCompatActivity implements View.OnClickLi
 
             case R.id.searchBtn:
                 SearchByAddress();
-                startActivity(new Intent(SearchByAddress.this, SearchByAddress.class));
+                startActivity(new Intent(SearchByAddress.this, Recycler.class));
                 break;
         }
     }
