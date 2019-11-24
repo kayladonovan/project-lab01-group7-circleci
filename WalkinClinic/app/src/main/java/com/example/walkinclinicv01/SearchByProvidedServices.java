@@ -24,7 +24,7 @@ public class SearchByProvidedServices extends AppCompatActivity implements View.
                 break;
 
             case R.id.searchBtn:
-                startActivity(new Intent(SearchByProvidedServices.this, ListOfClinics.class));
+                startActivity(new Intent(SearchByProvidedServices.this, Recycler.class));
                 break;
         }
     }

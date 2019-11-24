@@ -2,15 +2,20 @@ package com.example.walkinclinicv01;
 
 public class Clinic {
     Info info;
-    String USERID;
-    public Clinic(Info info, String USERID){
+    Hours day;
+    Service service;
+
+
+    public Clinic(Info info, Hours day, Service service){
         this.info = info;
-        this.USERID = USERID;
+        this.day = day;
+        this.service = service;
     }
     public Clinic(){}
 
     public Info getInfo(){ return info;}
-
-    public String getUSERID(){return USERID;}
+    public Hours getHours(){ return day;};
+    public Service getService(){ return service; };
+    //public String getUSERID(){return USERID;}
 
 }

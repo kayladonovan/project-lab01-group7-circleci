@@ -34,7 +34,7 @@ public class ListOfClinics extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_clinics);
-        linearLayout = findViewById(R.id.linearLayout);
+        //linearLayout = findViewById(R.id.linearLayout);
 
         /*Determines number of Clinics in the DB by calling getChildrenCount() and storing the value as an integer
         needed to determine the size of the for loop*/
