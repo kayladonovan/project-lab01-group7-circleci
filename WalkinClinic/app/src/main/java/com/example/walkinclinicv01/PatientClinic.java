@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 public class PatientClinic extends AppCompatActivity implements View.OnClickListener{
 
     FirebaseAuth mAuth;
@@ -26,6 +29,7 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
     TextView clinicName;
     TextView waitTimeHoursTextView;
     TextView waitTimeMinsTextView;
+    TextView rating;
     String uid;
 
     @Override
@@ -35,7 +39,7 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
         clinicName = (TextView)findViewById(R.id.clinicName);
         waitTimeHoursTextView = (TextView)findViewById(R.id.waitTimeInHours);
         waitTimeMinsTextView = (TextView)findViewById(R.id.waitTimeInMins);
-
+        rating = (TextView) findViewById(R.id.rating);
         findViewById(R.id.checkInBtn).setOnClickListener(this);
         findViewById(R.id.bookBtn).setOnClickListener(this);
         findViewById(R.id.rateBtn).setOnClickListener(this);
@@ -52,7 +56,9 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
             uid = extras.getString("ID");
         }else{
             uid = "";
+
         }
+
 
         myRef.child("Clinics").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -61,6 +67,17 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
 
                 System.out.println(info.getName());
                 clinicName.setText(info.getName());
+
+                if (dataSnapshot.hasChild("Feedback")) {
+                    Feedback feedback = dataSnapshot.child("Feedback").getValue(Feedback.class);
+                    String ratingString = Double.toString(feedback.getRating());
+                    String num = Integer.toString(feedback.getNumberOfReviewers());
+                    String display = ratingString + "(" + num + ")";
+                    rating.setText(display);
+                }
+                else{
+                    rating.setText("5(0)");
+                }
             }
 
             @Override
@@ -68,7 +85,10 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
 
             }
         });
+
+
     }
+
 
     private void checkingIn(){
         myRef1 = FirebaseDatabase.getInstance().getReference();
@@ -129,6 +149,9 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
             case R.id.bookBtn:
                 break;
             case R.id.rateBtn:
+                Intent i = new Intent(PatientClinic.this, Rating.class);
+                i.putExtra("ID",uid);
+                startActivity(i);
                 break;
             case R.id.goBackBtn:
                 startActivity(new Intent(PatientClinic.this,ClinicSearch.class));
