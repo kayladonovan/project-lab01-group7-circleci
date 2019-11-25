@@ -59,13 +59,14 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
 
         }
 
-
+        System.out.println(uid+"PC");
         myRef.child("Clinics").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Info info = dataSnapshot.child("Info").getValue(Info.class);
-
+                System.out.println("Attempt");
                 System.out.println(info.getName());
+                System.out.println("Passed");
                 clinicName.setText(info.getName());
 
                 if (dataSnapshot.hasChild("Feedback")) {

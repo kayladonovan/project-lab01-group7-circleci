@@ -107,13 +107,17 @@ public class Rating extends AppCompatActivity implements View.OnClickListener{
                         newRating = (double)Math.round(newRating*10d)/10d;
                         Feedback newFeedback =  new Feedback(newRating, numberOfRevs + 1);
                         myRef.child("Clinics").child(uid).child("Feedback").setValue(newFeedback);
-                        startActivity(new Intent(Rating.this,Rating.class));
+                        Intent i = new Intent(Rating.this, PatientClinic.class);
+                        i.putExtra("ID",uid);
+                        startActivity(i);
                         Toast.makeText(Rating.this, "Submitted! Thank you for your feedback.", Toast.LENGTH_LONG).show();
                     }
                     else{
                         Feedback feedback = new Feedback(ratingDouble,1);
                         myRef.child("Clinics").child(uid).child("Feedback").setValue(feedback);
-                        startActivity(new Intent(Rating.this,Rating.class));
+                        Intent i = new Intent(Rating.this, PatientClinic.class);
+                        i.putExtra("ID",uid);
+                        startActivity(i);
                         Toast.makeText(Rating.this, "Submitted! Thank you for your feedback.", Toast.LENGTH_LONG).show();
                     }
                 }

@@ -35,6 +35,23 @@
             android:layout_height="50dp" />
 
         <EditText
+            android:id="@+id/searchDay"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:hint="Enter day you wish to visit"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:selectAllOnFocus="true"
+            android:textSize="14sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <EditText
             android:id="@+id/searchStartHours"
             style="@style/Widget.AppCompat.EditText"
             android:layout_width="270dp"

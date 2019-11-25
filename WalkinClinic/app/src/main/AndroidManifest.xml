@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchByProvidedServices"></activity>
+        <activity android:name=".Recycler3"></activity>
+        <activity android:name=".Recycler2" />
+        <activity android:name=".ClinicsAdapter" />
+        <activity android:name=".Recycler" />
+        <activity android:name=".SearchByProvidedServices" />
         <activity android:name=".SearchByHours" />
         <activity android:name=".SearchByAddress" />
         <activity android:name=".ListOfClinics" />
