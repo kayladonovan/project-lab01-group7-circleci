@@ -24,8 +24,6 @@ import android.util.Log;
 
 public class SearchByAddress extends AppCompatActivity implements View.OnClickListener{
 
-    private DatabaseReference mRef;
-    private Query query;
     EditText search;
 
     @Override
@@ -37,32 +35,6 @@ public class SearchByAddress extends AppCompatActivity implements View.OnClickLi
         search = (EditText) findViewById(R.id.searchAddress);
     }
 
-    //NEW
-    protected void SearchByAddress(){
-
-        String addressSearch = search.getText().toString().trim();
-
-        mRef = FirebaseDatabase.getInstance().getReference();
-
-        query = mRef.child("Clinics").orderByChild("address").equalTo(addressSearch);
-
-        ValueEventListener valueEventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                    String key = ds.getKey();
-                    Log.d("Clinics found", key);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d("No Results Found", databaseError.getMessage());
-            }
-        };
-        query.addListenerForSingleValueEvent(valueEventListener);
-    }
 
     @Override
     public void onClick(View v) {
@@ -72,8 +44,10 @@ public class SearchByAddress extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.searchBtn:
-                SearchByAddress();
-                startActivity(new Intent(SearchByAddress.this, Recycler.class));
+                String addressSearch = search.getText().toString().trim();
+                Intent address = new Intent(SearchByAddress.this, Recycler.class);
+                address.putExtra("address", addressSearch);
+                startActivity(address);
                 break;
         }
     }

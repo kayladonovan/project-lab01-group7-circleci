@@ -44,12 +44,19 @@ public class SearchByProvidedServices extends AppCompatActivity implements View.
 
     }
 
+    /*
+
     private void searchByService(){
 
 
 
         String serviceToCheck=editTextServiceName.getText().toString().trim();
         //hbm
+
+
+
+
+
 
         mRef= FirebaseDatabase.getInstance().getReference();
 
@@ -94,7 +101,11 @@ public class SearchByProvidedServices extends AppCompatActivity implements View.
 
         //startActivity(i);
 
+
+
     }
+
+     */
 
 
     @Override
@@ -106,13 +117,21 @@ public class SearchByProvidedServices extends AppCompatActivity implements View.
 
             case R.id.searchBtn:
 
-                searchByService();
+                //searchByService();
 
                 //Intent i= new Intent(SearchByProvidedServices.this, ListOfClinics.class);
 
                 //startActivity(i);
 
-                startActivity(new Intent(SearchByProvidedServices.this, Recycler.class));
+                //startActivity(new Intent(SearchByProvidedServices.this, Recycler.class));
+
+                String serviceToCheck=editTextServiceName.getText().toString().trim();
+
+                Intent service=new Intent(SearchByProvidedServices.this, Recycler2.class);
+
+                service.putExtra("Services Offered", serviceToCheck);
+
+                startActivity(service);
 
 
 
