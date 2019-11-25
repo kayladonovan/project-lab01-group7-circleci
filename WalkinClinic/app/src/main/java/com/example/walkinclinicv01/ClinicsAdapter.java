@@ -22,12 +22,10 @@ public class ClinicsAdapter extends RecyclerView.Adapter<ClinicsAdapter.ClinicVi
         this.clinicList = clinicList;
     }
 
-    public ClinicsAdapter() {
-    }
 
     @Override
     public ClinicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.activity_recycler, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.activity_clinics_adapter, parent, false);
         return new ClinicViewHolder(view);
     }
 
@@ -35,11 +33,11 @@ public class ClinicsAdapter extends RecyclerView.Adapter<ClinicsAdapter.ClinicVi
     public void onBindViewHolder(@NonNull ClinicViewHolder holder, int position) {
         Clinic clinic = clinicList.get(position);
 
-        holder.textViewName.setText(clinic.info.getName());
-        holder.textViewAddress.setText(clinic.info.getAddress());
-        holder.textViewStartTime.setText(clinic.day.getOpen());
-        holder.textViewEndTime.setText(clinic.day.getClosed());
-        holder.textViewService.setText(clinic.service.getServiceName());
+        holder.textViewName.setText("Name: " + clinic.info.getName());
+        holder.textViewAddress.setText("Address: " +clinic.info.getAddress());
+        holder.textViewStartTime.setText("Open: " +clinic.day.getOpen());
+        holder.textViewEndTime.setText("Close: " +clinic.day.getClosed());
+        holder.textViewService.setText("Service: " +clinic.service.getServiceName());
 
     }
     @Override
@@ -49,12 +47,7 @@ public class ClinicsAdapter extends RecyclerView.Adapter<ClinicsAdapter.ClinicVi
 
     class ClinicViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewName;
-        TextView textViewAddress;
-        TextView textViewDay;
-        TextView textViewStartTime;
-        TextView textViewEndTime;
-        TextView textViewService;
+        TextView textViewName, textViewAddress, textViewDay, textViewStartTime, textViewEndTime, textViewService;
 
 
         public ClinicViewHolder(@NonNull View itemView) {
