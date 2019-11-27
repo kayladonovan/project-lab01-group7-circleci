@@ -4,7 +4,7 @@ jobs:
     branches:
       only:
         - f/deliverable04
-    working_directory: ~/project-lab01-group7
+    working_directory: ~/project-lab01-group7/WalkinClinic
     docker:
       - image: circleci/android:api-28-alpha
     environment:
