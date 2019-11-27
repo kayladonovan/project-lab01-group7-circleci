@@ -1,6 +1,9 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - f/deliverable04
     working_directory: ~/project-lab01-group7
     docker:
       - image: circleci/android:api-28-alpha
