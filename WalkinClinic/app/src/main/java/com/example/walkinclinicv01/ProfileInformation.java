@@ -57,12 +57,12 @@ public class ProfileInformation extends AppCompatActivity implements View.OnClic
             return;
         }
 
-        final Info info = new Info(clinicName,address,phoneNumber);
 
         mAuth = FirebaseAuth.getInstance();
         myRef = FirebaseDatabase.getInstance().getReference();
         FirebaseUser user = mAuth.getCurrentUser();
 
+        final Info info = new Info(clinicName,address,phoneNumber,user.getUid());
         //final Clinic clinic = new Clinic(info,user.getUid());
 
         myRef.child("Clinics").child(user.getUid()).child("Info").setValue(info).addOnCompleteListener(this,

@@ -17,12 +17,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
 public class PatientClinic extends AppCompatActivity implements View.OnClickListener{
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+    DatabaseReference myInitialRef;
     DatabaseReference myRef;
     DatabaseReference myRef1;
     DatabaseReference myRef2;
@@ -58,6 +57,19 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
             uid = "";
 
         }
+        /*
+        myInitialRef = FirebaseDatabase.getInstance().getReference();
+        myInitialRef.child("Clinics").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });*/
 
         System.out.println(uid+"PC");
         myRef.child("Clinics").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -79,6 +91,11 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
                 else{
                     rating.setText("5(0)");
                 }
+
+                if(dataSnapshot.hasChild("WaitTimes")){
+                    WaitTimes waitTime = dataSnapshot.child("WaitTimes").getValue(WaitTimes.class);
+                    updateWaitingTimes(waitTime);
+                }
             }
 
             @Override
@@ -89,7 +106,10 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
 
 
     }
-
+    private void startTheActivity(){
+        Toast.makeText(PatientClinic.this, "Checked in!", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(PatientClinic.this,ClinicSearch.class));
+    }
 
     private void checkingIn(){
         myRef1 = FirebaseDatabase.getInstance().getReference();
@@ -104,6 +124,7 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
                                     if(task.isSuccessful()){
                                         //System.out.println(waitTime.getWaitTimeTotal());
                                         updateWaitingTimes(waitTime);
+                                        startTheActivity();
                                         //startActivity(new Intent(PatientClinic.this,ClinicSearch.class));
                                         //waitTimeTextView.setText(waitTime.getWaitTimeTotal());
                                     } else{
@@ -120,6 +141,7 @@ public class PatientClinic extends AppCompatActivity implements View.OnClickList
                             task1 -> {
                                 if(task1.isSuccessful()){
                                     updateWaitingTimes(updatedWaitTimes);
+                                    startTheActivity();
                                     //System.out.println(updatedWaitTimes.getWaitTimeTotal());
                                     //startActivity(new Intent(PatientClinic.this,ClinicSearch.class));
                                 }
