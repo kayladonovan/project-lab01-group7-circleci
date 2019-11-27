@@ -4,7 +4,7 @@ jobs:
     branches:
       only:
         - f/deliverable04
-    working_directory: ~/project-lab01-group7/WalkinClinic
+    working_directory: ~/project-lab01-group7
     docker:
       - image: circleci/android:api-28-alpha
     environment:
@@ -24,7 +24,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "WalkinClinic/app/build.gradle" }}
       - run:
           name: Run SuccessEmployeeLogin
           command: ./gradlew test
