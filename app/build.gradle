@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "26.1.1"
+    buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.walkinclinicv01"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
