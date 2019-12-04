@@ -24,7 +24,7 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Run MainActivityTest
+          name: Run DeleteServiceFromProfileTest
           command: ./gradlew test
       - store_artifacts:
           path: app/build/outputs/apk/debug/
